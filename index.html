@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* Arquitectura 2025 - Estilo BLOCK x SCZ */
+        /* Arquitectura limpia 2025 - Estilo Independiente */
         body {
             background-color: #050505;
             background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
             background-attachment: fixed;
             background-repeat: no-repeat;
             color: #ffffff;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: arial, helvetica, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -20,12 +20,12 @@
 
         .wrapper { width: 100%; padding-top: 20px; padding-bottom: 30px; }
 
-        /* IDENTIDAD: BLO Degradado + S Roja con Espacio */
+        /* NOMBRE: Degradado BLO + S roja con espacio */
         .brand {
             font-size: 50px;
             font-weight: 900;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             display: inline-block;
             background: linear-gradient(to right, #ff0000, #00d4ff, #ffffff);
             -webkit-background-clip: text;
@@ -41,88 +41,77 @@
         }
 
         .sub-tag {
-            color: #00d4ff; font-size: 16px; font-weight: bold;
-            letter-spacing: 2px; margin-bottom: 25px;
+            color: #00d4ff; font-size: 18px; font-weight: bold;
+            letter-spacing: 2px; margin-bottom: 30px;
         }
 
-        /* PANEL DE NAVEGACIÓN ESTILO HOST */
-        .main-panel {
-            background: rgba(10, 10, 10, 0.95);
-            border: 3px solid #9d00ff;
-            display: inline-block;
-            width: 96%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 15px;
-            box-sizing: border-box;
-        }
-
-        .nav-bar {
+        /* CONTENEDOR DE BOTONES INDEPENDIENTES */
+        .hub-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; /* Separación de 20px entre botones */
-            margin-bottom: 20px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
+            gap: 20px; /* Separación de 20 entre botones */
+            width: 96%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .nav-btn {
+        /* Estructura de cada bloque de botón */
+        .menu-block {
+            flex: 1 1 250px;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item {
             background-color: #1a1a1a;
             color: #ffffff;
-            border: 2px solid #333;
-            padding: 12px 20px;
-            font-size: 15px;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 18px;
             font-weight: bold;
-            border-radius: 8px;
+            border: 2px solid #333;
+            border-radius: 10px;
             cursor: pointer;
-            transition: 0.3s;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        .nav-btn:hover, .nav-btn.active {
+        .menu-item:hover {
             background-color: #9d00ff;
             border-color: #fff;
-            color: #fff;
         }
 
-        /* CONTENEDOR DE CONTENIDO (FUNCIONES) */
-        .content-display {
-            background: #000;
-            border: 1px solid #444;
+        /* SUBMENÚS: Despliegue independiente hacia abajo */
+        .submenu {
+            display: none;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #9d00ff;
+            margin-top: 10px;
             border-radius: 10px;
-            min-height: 250px;
-            padding: 20px;
-            display: none; /* Se activa por JS */
+            overflow: hidden;
             text-align: left;
         }
 
-        .content-display.active { display: block; }
-
-        .item-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .download-item {
-            background: #151515;
-            padding: 15px;
-            border-left: 4px solid #ff0000;
-            border-radius: 5px;
+        .sub-option {
+            display: block;
+            color: #00d4ff;
             text-decoration: none;
-            color: #fff;
+            padding: 12px 15px;
+            font-size: 16px;
             font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border-bottom: 1px solid #222;
         }
 
-        .download-item:hover { background: #222; border-left-color: #00d4ff; }
+        .sub-option:hover {
+            background: #111;
+            color: #ff0000;
+        }
 
         /* FOOTER FIJO */
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 14px;
             font-weight: bold;
             color: #ffffff;
@@ -133,79 +122,64 @@
 <body>
 
 <div class="wrapper">
-    <!-- MARCA SUPERSGMR -->
-    <div class="brand">BLOCK SUPER<span class="red-s-fix">S</span>GMR</div>
+    <!-- TITULO PROTEGIDO -->
+    <div class="brand">
+        BLOCK SUPER<span class="red-s-fix">S</span>GMR
+    </div>
     <div class="sub-tag">PORTAL OFICIAL 2025</div>
 
-    <div class="main-panel">
-        <!-- MENÚ DE NAVEGACIÓN (ALINEADO LADO A LADO) -->
-        <div class="nav-bar">
-            <button class="nav-btn active" onclick="openSection(event, 'juegos')">🎮 JUEGOS</button>
-            <button class="nav-btn" onclick="openSection(event, 'apps')">🛠️ APPS</button>
-            <button class="nav-btn" onclick="openSection(event, 'descargas')">📂 DESCARGAS</button>
-            <button class="nav-btn" onclick="openSection(event, 'extras')">✨ EXTRAS</button>
-        </div>
-
-        <!-- SECCIONES DE CONTENIDO (ESTILO HOST) -->
-        <div id="juegos" class="content-display active">
-            <h3 style="color: #ff0000;">LIBRERÍA DE JUEGOS</h3>
-            <div class="item-list">
-                <a href="#" class="download-item">PlayStation 3 <span>PKG</span></a>
-                <a href="#" class="download-item">Retro Games <span>ISO</span></a>
-                <a href="#" class="download-item">Emuladores <span>BIN</span></a>
+    <div class="hub-container">
+        
+        <!-- Bloque Independiente: JUEGOS -->
+        <div class="menu-block">
+            <div class="menu-item" onclick="toggleMenu('m1')">🎮 JUEGOS</div>
+            <div id="m1" class="submenu">
+                <a href="#" class="sub-option">INSTALAR JUEGOS</a>
+                <a href="#" class="sub-option">EMULADORES</a>
+                <a href="#" class="sub-option">RETRO GAMING</a>
             </div>
         </div>
 
-        <div id="apps" class="content-display">
-            <h3 style="color: #00d4ff;">HERRAMIENTAS Y APPS</h3>
-            <div class="item-list">
-                <a href="#" class="download-item">MultiMan <span>v4.85</span></a>
-                <a href="#" class="download-item">IrisMan <span>v2025</span></a>
-                <a href="#" class="download-item">WebMan Mod <span>Setup</span></a>
+        <!-- Bloque Independiente: APPS -->
+        <div class="menu-block">
+            <div class="menu-item" onclick="toggleMenu('m2')">🛠️ APPS</div>
+            <div id="m2" class="submenu">
+                <a href="#" class="sub-option">MULTIMAN</a>
+                <a href="#" class="sub-option">IRISMAN</a>
+                <a href="#" class="sub-option">WEBMAN MOD</a>
             </div>
         </div>
 
-        <div id="descargas" class="content-display">
-            <h3 style="color: #9d00ff;">DESCARGAS DIRECTAS</h3>
-            <div class="item-list">
-                <a href="#" class="download-item">Direct Store <span>FIX</span></a>
-                <a href="#" class="download-item">DLC Packs <span>ALL</span></a>
-                <a href="#" class="download-item">Themes <span>p3t</span></a>
+        <!-- Bloque Independiente: TIENDAS -->
+        <div class="menu-block">
+            <div class="menu-item" onclick="toggleMenu('m3')">🏪 TIENDAS</div>
+            <div id="m3" class="submenu">
+                <a href="#" class="sub-option">VIDEOSTORE SCZ</a>
+                <a href="#" class="sub-option">DIRECT STORE</a>
+                <a href="#" class="sub-option">TIENDA FIX</a>
             </div>
         </div>
 
-        <div id="extras" class="content-display">
-            <h3 style="color: #ffffff;">CONTENIDO EXTRA</h3>
-            <div class="item-list">
-                <a href="#" class="download-item">Wallpapers SCZ <span>4K</span></a>
-                <a href="#" class="download-item">Música Hub <span>MP3</span></a>
-                <a href="#" class="download-item">Mods Especiales <span>RAR</span></a>
-            </div>
-        </div>
     </div>
 
-    <footer>PAGINA OFICIAL</footer>
+    <!-- PIE DE PAGINA PROTEGIDO -->
+    <footer>
+        PAGINA OFICIAL
+    </footer>
 </div>
 
 <script>
-    function openSection(evt, sectionName) {
-        var i, content, navbtns;
+    function toggleMenu(id) {
+        var menu = document.getElementById(id);
+        var isVisible = menu.style.display === "block";
         
-        // Ocultar todo el contenido
-        content = document.getElementsByClassName("content-display");
-        for (i = 0; i < content.length; i++) {
-            content[i].classList.remove("active");
+        // Oculta otros menús para que no se encimen
+        document.querySelectorAll('.submenu').forEach(m => m.style.display = 'none');
+        
+        // Si estaba oculto, lo despliega hacia abajo
+        if (!isVisible) {
+            menu.style.display = "block";
         }
-
-        // Quitar la clase "active" de todos los botones
-        navbtns = document.getElementsByClassName("nav-btn");
-        for (i = 0; i < navbtns.length; i++) {
-            navbtns[i].classList.remove("active");
-        }
-
-        // Mostrar la sección actual y añadir "active" al botón
-        document.getElementById(sectionName).classList.add("active");
-        evt.currentTarget.classList.add("active");
     }
 </script>
 
