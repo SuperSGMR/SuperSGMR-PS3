@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block SuperSGMR | Official Site</title>
+    <title>Block SuperSGMR | Space Edition</title>
     <style>
-        /* Fondo con degradado animado */
+        /* Fondo Estático Estilo Espacial */
         body {
             margin: 0;
             padding: 0;
@@ -13,67 +13,55 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            overflow: hidden;
-            /* Colores: Rojo, Morado, Azul */
-            background: linear-gradient(-45deg, #ff0000, #800080, #0000ff, #800080);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            font-family: 'Orbitron', sans-serif; /* Estilo futurista */
+            background-color: #0a0a0a;
+            /* Mezcla de Rojo, Morado y Azul estilo nebulosa */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(255, 0, 0, 0.4) 0px, transparent 50%), 
+                radial-gradient(at 50% 50%, rgba(128, 0, 128, 0.4) 0px, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(0, 0, 255, 0.4) 0px, transparent 50%);
+            background-attachment: fixed;
         }
 
-        /* Animación del fondo */
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Contenedor principal */
+        /* Tarjeta Central Difuminada */
         .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px); /* Efecto de cristal difuminado */
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 50px;
-            border-radius: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px;
+            border-radius: 40px;
             text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-            max-width: 80%;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 1);
         }
 
-        /* Nombre Principal Estilizado */
+        /* Nombre Principal */
         h1 {
-            font-size: 4rem;
-            color: white;
+            font-size: 4.5rem;
+            color: #ffffff;
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+            letter-spacing: 8px;
             font-weight: 900;
+            /* Brillo estático sutil */
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
         p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.2rem;
-            margin-top: 20px;
-            letter-spacing: 1px;
-        }
-
-        /* Efecto de brillo al nombre */
-        .glow {
-            animation: textGlow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes textGlow {
-            from { text-shadow: 0 0 10px #fff, 0 0 20px #800080; }
-            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff0000; }
+            color: #aaa;
+            font-size: 1rem;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
         }
     </style>
+    <!-- Fuente futurista desde Google Fonts -->
+    <link href="fonts.googleapis.com" rel="stylesheet">
 </head>
 <body>
 
     <div class="glass-card">
-        <h1 class="glow">Block SuperSGMR</h1>
-        <p>Bienvenido al futuro del desarrollo</p>
+        <h1>Block SuperSGMR</h1>
+        <p>Ecosistema Digital 2025</p>
     </div>
 
 </body>
