@@ -2,14 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Optimización para Celular y PC -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block SuperSGMR | Multi-Hub</title>
+    <title>Block SuperSGMR | Hub</title>
     <style>
-        /* 1. FONDO CON COLORES SUPER S GMR (Rojo, Morado, Azul) */
-        /* Compatible con PS3 (fondo sólido) y PC/Móvil (degradado) */
+        /* ARQUITECTURA FIJA - 2025 */
         body {
-            background-color: #050505; /* Respaldo para PS3 */
+            background-color: #050505;
             background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -18,11 +16,8 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            /* Flex para centrar en PC/Móvil sin romper PS3 */
-            display: block; 
         }
 
-        /* 2. ARQUITECTURA FIJA OPTIMIZADA */
         .wrapper {
             width: 100%;
             padding-top: 50px;
@@ -30,41 +25,43 @@
             box-sizing: border-box;
         }
 
+        /* CAMBIO: Letras más gruesas (font-weight: 900) */
         .brand {
-            font-size: clamp(28px, 8vw, 50px); /* Se ajusta solo en PC/Móvil */
-            font-weight: bold;
+            font-size: clamp(28px, 8vw, 50px);
+            font-weight: 900; 
             text-transform: uppercase;
             margin-bottom: 5px;
-            text-shadow: 2px 2px 5px #000000;
+            text-shadow: 3px 3px 6px #000000;
+            letter-spacing: 2px;
         }
 
-        /* Colores Super S GMR */
         .red { color: #FF0000; }
         .blue { color: #00D4FF; }
 
+        /* CAMBIO: Texto fijo de redes sociales */
         .sub-tag {
             color: #00D4FF;
             font-size: 14px;
-            letter-spacing: 3px;
+            font-weight: bold;
+            letter-spacing: 2px;
             margin-bottom: 30px;
             text-shadow: 1px 1px 2px #000;
+            text-transform: uppercase;
         }
 
-        /* 3. PANEL CENTRAL (Se adapta a PC y Móvil) */
         .main-panel {
-            background-color: #111111; /* Color sólido para PS3 */
-            background: rgba(10, 10, 10, 0.9); /* Transparencia para PC/Móvil */
+            background-color: #111111;
+            background: rgba(10, 10, 10, 0.9);
             border: 3px solid #9D00FF;
             display: inline-block;
             width: 90%;
-            max-width: 550px; /* Tamaño ideal en PC */
+            max-width: 550px;
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             box-sizing: border-box;
         }
 
-        /* 4. BOTONES (Grandes para táctil y mando) */
         .menu-item {
             display: block;
             background-color: #1A1A1A;
@@ -76,24 +73,22 @@
             font-size: 18px;
             font-weight: bold;
             border-radius: 5px;
-            transition: 0.3s; /* Suave en PC/Móvil */
+            transition: 0.3s;
         }
 
-        /* Animación de elección compatible */
         .menu-item:hover, .menu-item:active {
             background-color: #FF0000;
             color: #000000;
-            transform: scale(1.02); /* Efecto visual en PC */
+            transform: scale(1.02);
         }
 
         .footer {
             margin-top: 40px;
-            font-size: 12px;
+            font-size: 11px;
             color: #eeeeee;
             letter-spacing: 1px;
         }
 
-        /* Ajustes extra para PC */
         @media (min-width: 1000px) {
             .wrapper { padding-top: 100px; }
             .menu-item { padding: 25px; font-size: 22px; }
@@ -103,14 +98,14 @@
 <body>
 
     <div class="wrapper">
-        <!-- Nombre Principal Block SuperSGMR -->
+        <!-- Nombre con letras extra gruesas -->
         <div class="brand">
             <span class="red">Blo</span><span class="blue">ck Super</span><span class="red">S</span><span class="blue">GMR</span>
         </div>
         
-        <div class="sub-tag">PROJECT HUB • 2025</div>
+        <!-- Texto fijo de Redes Sociales -->
+        <div class="sub-tag">SIGUEME EN MIS REDES SOCIALES</div>
 
-        <!-- Menú Principal Fijo -->
         <div class="main-panel">
             <a href="#" class="menu-item">📂 ARCHIVOS PRINCIPALES</a>
             <a href="#" class="menu-item">🎮 APPS HOMEBREW</a>
