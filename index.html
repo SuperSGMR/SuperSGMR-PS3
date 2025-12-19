@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* Arquitectura 2025 - Estilo Visual Avanzado */
+        /* Arquitectura fija 2025 - Sin Sombras */
         body {
             background-color: #050505;
             background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
@@ -20,103 +20,102 @@
 
         .wrapper { width: 100%; padding-top: 20px; padding-bottom: 30px; }
 
-        /* NOMBRE CON DIFUMINADO: BLO (Rojo) fluyendo a SUPER S GMR */
+        /* NOMBRE: Degradado en BLO + S roja con espacio lateral */
         .brand {
             font-size: 50px;
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 10px;
-            text-shadow: 4px 4px 8px #000000;
             display: inline-block;
-            /* Efecto de difuminado de colores en el texto */
-            background: linear-gradient(to right, #ff0000 20%, #00d4ff 50%, #ffffff 80%);
+            background: linear-gradient(to right, #ff0000, #00d4ff, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            /* Sombra eliminada */
         }
 
-        /* Mantener la segunda S en rojo sólido y con su espacio */
         .red-s-fix {
             color: #ff0000 !important;
             -webkit-text-fill-color: #ff0000 !important;
             display: inline-block;
-            margin-left: 15px;
-            margin-right: 15px;
+            margin-left: 20px; /* 20 espacios de separación para la S */
+            margin-right: 20px;
         }
 
         .sub-tag {
             color: #00d4ff; font-size: 18px; font-weight: bold;
-            letter-spacing: 2px; margin-bottom: 25px; text-shadow: 2px 2px 3px #000;
+            letter-spacing: 2px; margin-bottom: 25px;
         }
 
-        /* INTERFAZ DIFERENTE: CUADRÍCULA (GRID) */
+        /* INTERFAZ: Botones uno al lado del otro con 20px de separación */
         .main-panel {
             background: rgba(10, 10, 10, 0.95);
             border: 3px solid #9d00ff;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Dos columnas */
-            gap: 15px;
-            width: 94%;
-            max-width: 650px;
+            display: inline-block;
+            width: 96%;
+            max-width: 900px;
             margin: 0 auto;
             padding: 25px;
             border-radius: 20px;
             box-sizing: border-box;
-            box-shadow: 0px 0px 25px rgba(157, 0, 255, 0.6);
+            /* Sombra eliminada */
         }
 
-        /* Botones de la cuadrícula */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Separación de 20 entre cada botón */
+        }
+
         .menu-item {
             background-color: #1a1a1a;
             color: #ffffff;
             text-decoration: none;
-            padding: 20px 10px;
-            font-size: 18px;
+            padding: 15px 25px;
+            font-size: 16px;
             font-weight: bold;
             border: 2px solid #333;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            flex: 1 1 auto; /* Permite que se ajusten uno al lado del otro */
+            min-width: 120px;
         }
-        .menu-item:hover { background-color: #9d00ff; transform: scale(1.05); }
 
-        /* Submenús flotantes o expansibles */
+        .menu-item:hover { background-color: #9d00ff; border-color: #fff; }
+
+        /* Submenús */
         .submenu {
-            grid-column: span 2; /* Ocupa las dos columnas al abrirse */
             display: none;
+            width: 100%;
             background: #000;
             border: 1px solid #9d00ff;
-            border-radius: 10px;
-            padding: 10px;
-            margin-top: -5px;
+            margin-top: 10px;
+            border-radius: 8px;
         }
+
         .sub-option {
             display: block;
             color: #00d4ff;
             text-decoration: none;
-            padding: 12px;
-            font-size: 16px;
+            padding: 10px;
             border-bottom: 1px solid #222;
         }
 
-        /* NUNCA CAMBIAR: SECCIÓN REDES SOCIALES */
+        /* PROTEGIDO: REDES SOCIALES */
         .social-section {
-            grid-column: span 2; /* Ocupa todo el ancho */
-            margin-top: 20px;
+            width: 100%;
+            margin-top: 30px;
             padding-top: 15px;
             border-top: 1px solid #444;
         }
-        .social-title { font-size: 16px; color: #00d4ff; margin-bottom: 10px; font-weight: bold; }
-        .social-links { display: flex; justify-content: center; gap: 15px; }
+        .social-title { font-size: 16px; color: #00d4ff; margin-bottom: 15px; font-weight: bold; }
+        .social-links { display: flex; justify-content: center; gap: 20px; }
         .social-btn {
             background: #222; color: white; padding: 10px 15px;
             text-decoration: none; border-radius: 5px; border: 1px solid #9d00ff;
         }
 
-        /* NUNCA CAMBIAR: PAGINA OFICIAL */
+        /* PROTEGIDO: PAGINA OFICIAL */
         footer {
             margin-top: 25px;
             font-size: 14px;
@@ -129,48 +128,28 @@
 <body>
 
 <div class="wrapper">
-    <!-- NOMBRE: BLO (Rojo difuminado) + SEGUNDA S ROJA CON ESPACIO -->
+    <!-- NOMBRE: BLO DEGRADADO + S ROJA CON ESPACIO -->
     <div class="brand">
         BLOCK SUPER<span class="red-s-fix">S</span>GMR
     </div>
     <div class="sub-tag">PORTAL OFICIAL 2025</div>
 
     <div class="main-panel">
-        
-        <!-- Botón 1 -->
-        <div class="menu-item" onclick="toggleMenu('m1')">🎮 JUEGOS</div>
-        <!-- Botón 2 -->
-        <div class="menu-item" onclick="toggleMenu('m2')">🛠️ APPS</div>
-        
-        <!-- Submenús para la fila 1 -->
-        <div id="m1" class="submenu">
-            <a href="#" class="sub-option">INSTALAR JUEGOS</a>
-            <a href="#" class="sub-option">EMULADORES</a>
-        </div>
-        <div id="m2" class="submenu">
-            <a href="#" class="sub-option">HERRAMIENTAS</a>
-            <a href="#" class="sub-option">SISTEMA</a>
+        <div class="button-container">
+            <div class="menu-item" onclick="toggleMenu('m1')">🎮 JUEGOS</div>
+            <div class="menu-item" onclick="toggleMenu('m2')">🛠️ APPS</div>
+            <div class="menu-item" onclick="toggleMenu('m3')">📂 DESCARGAS</div>
+            <div class="menu-item" onclick="toggleMenu('m4')">✨ EXTRAS</div>
+            <a href="#" class="menu-item">🌐 COMUNIDAD</a>
         </div>
 
-        <!-- Botón 3 -->
-        <div class="menu-item" onclick="toggleMenu('m3')">📂 DESCARGAS</div>
-        <!-- Botón 4 -->
-        <div class="menu-item" onclick="toggleMenu('m4')">✨ EXTRAS</div>
+        <!-- Contenedores de submenú -->
+        <div id="m1" class="submenu"><a href="#" class="sub-option">VER JUEGOS</a></div>
+        <div id="m2" class="submenu"><a href="#" class="sub-option">VER APPS</a></div>
+        <div id="m3" class="submenu"><a href="#" class="sub-option">DESCARGAS DIRECTAS</a></div>
+        <div id="m4" class="submenu"><a href="#" class="sub-option">CONTENIDO EXTRA</a></div>
 
-        <!-- Submenús para la fila 2 -->
-        <div id="m3" class="submenu">
-            <a href="#" class="sub-option">ISOS / PKGS</a>
-            <a href="#" class="sub-option">SAVEGAMES</a>
-        </div>
-        <div id="m4" class="submenu">
-            <a href="#" class="sub-option">WALLPAPERS</a>
-            <a href="#" class="sub-option">MODS</a>
-        </div>
-
-        <!-- Comunidad ocupa todo el ancho abajo -->
-        <a href="#" class="menu-item" style="grid-column: span 2;">🌐 COMUNIDAD</a>
-
-        <!-- NUNCA CAMBIAR ESTO -->
+        <!-- SECCIÓN REDES SOCIALES (MANTENIDA) -->
         <div class="social-section">
             <div class="social-title">SÍGUEME EN MIS REDES SOCIALES</div>
             <div class="social-links">
@@ -181,7 +160,7 @@
         </div>
     </div>
 
-    <!-- NUNCA CAMBIAR ESTO -->
+    <!-- PIE DE PAGINA (MANTENIDO) -->
     <footer>
         PAGINA OFICIAL
     </footer>
