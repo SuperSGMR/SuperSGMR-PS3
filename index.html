@@ -33,15 +33,25 @@
         .sub-option { display: block; color: #00d4ff; text-decoration: none; padding: 15px 20px; font-size: 16px; font-weight: bold; border-bottom: 1px solid #222; }
         .sub-option:hover { background-color: #111; color: #ff0000; }
         
-        /* Botón de Apoyo Especial (Buy Me a Coffee) */
+        /* BOTÓN DE APOYO: Azul con Borde Rojo (Estilo Fondo) */
         .paypal-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         .paypal-btn { 
-            background-color: #FF7700; color: #ffffff; padding: 18px 10px; 
-            font-size: 20px; font-weight: bold; border: 2px solid #ffffff; 
-            border-radius: 12px; text-decoration: none; display: block; 
-            box-sizing: border-box; transition: 0.3s; 
+            background-color: #0000ff; /* Azul profundo */
+            color: #ffffff; 
+            padding: 18px 10px; 
+            font-size: 20px; 
+            font-weight: bold; 
+            border: 3px solid #ff0000; /* Borde Rojo */
+            border-radius: 12px; 
+            text-decoration: none; 
+            display: block; 
+            box-sizing: border-box; 
+            transition: 0.3s; 
         }
-        .paypal-btn:hover { background-color: #e66a00; border-color: #ff0000; }
+        .paypal-btn:hover { 
+            background-color: #ff0000; /* Invierte a rojo al pasar el mouse */
+            border-color: #00d4ff; 
+        }
         
         footer { margin-top: 60px; font-size: 14px; font-weight: bold; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; }
     </style>
@@ -49,6 +59,7 @@
 <body>
 
 <div class="wrapper">
+    <!-- TITULO PROTEGIDO -->
     <div class="brand">
         <span class="blo-red">BLO</span><span class="super-blue">CK SUPER</span><span class="red-s-fix">S</span><span class="super-blue">GMR</span>
     </div>
@@ -94,7 +105,7 @@
             </div>
         </div>
 
-        <!-- BOTÓN DE APOYO (REEMPLAZA EL LINK ABAJO) -->
+        <!-- BOTÓN DE APOYO CON COLORES DE FONDO (REEMPLAZA EL LINK) -->
         <div class="paypal-block">
             <a href="https://buymeacoffee.com/supersgmr" class="paypal-btn">
                 ☕ APOYAR PROYECTO
