@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* Arquitectura fija y segura - Optimizada 2025 */
+        /* Arquitectura 2025 - Estilo Visual Avanzado */
         body {
             background-color: #050505;
             background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
@@ -18,77 +18,93 @@
             text-align: center;
         }
 
-        .wrapper { width: 100%; padding-top: 10px; padding-bottom: 30px; }
+        .wrapper { width: 100%; padding-top: 20px; padding-bottom: 30px; }
 
-        /* TITULO PROTEGIDO: BLO (ROJO), S (AZUL), SEGUNDA S (ROJO + ESPACIO) */
+        /* NOMBRE CON DIFUMINADO: BLO (Rojo) fluyendo a SUPER S GMR */
         .brand {
-            font-size: 55px;
+            font-size: 50px;
             font-weight: 900;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             text-shadow: 4px 4px 8px #000000;
-            display: block;
+            display: inline-block;
+            /* Efecto de difuminado de colores en el texto */
+            background: linear-gradient(to right, #ff0000 20%, #00d4ff 50%, #ffffff 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .red { color: #ff0000; }
-        .blue { color: #00d4ff; }
-        .space-s { display: inline-block; margin-left: 20px; margin-right: 20px; color: #ff0000; }
+
+        /* Mantener la segunda S en rojo sólido y con su espacio */
+        .red-s-fix {
+            color: #ff0000 !important;
+            -webkit-text-fill-color: #ff0000 !important;
+            display: inline-block;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
 
         .sub-tag {
             color: #00d4ff; font-size: 18px; font-weight: bold;
-            letter-spacing: 2px; margin-bottom: 20px; text-shadow: 2px 2px 3px #000;
+            letter-spacing: 2px; margin-bottom: 25px; text-shadow: 2px 2px 3px #000;
         }
 
+        /* INTERFAZ DIFERENTE: CUADRÍCULA (GRID) */
         .main-panel {
             background: rgba(10, 10, 10, 0.95);
             border: 3px solid #9d00ff;
-            display: inline-block;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dos columnas */
+            gap: 15px;
             width: 94%;
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 15px;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 25px;
+            border-radius: 20px;
             box-sizing: border-box;
+            box-shadow: 0px 0px 25px rgba(157, 0, 255, 0.6);
         }
 
-        /* Interfaz en Filas (Hileras) */
-        .menu-row { margin-bottom: 10px; width: 100%; }
-
+        /* Botones de la cuadrícula */
         .menu-item {
-            display: block;
             background-color: #1a1a1a;
             color: #ffffff;
             text-decoration: none;
-            padding: 15px;
-            font-size: 20px;
+            padding: 20px 10px;
+            font-size: 18px;
             font-weight: bold;
             border: 2px solid #333;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
-            width: 100%;
-            box-sizing: border-box;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .menu-item:hover { background-color: #9d00ff; border-color: #fff; }
+        .menu-item:hover { background-color: #9d00ff; transform: scale(1.05); }
 
-        /* Submenús */
+        /* Submenús flotantes o expansibles */
         .submenu {
+            grid-column: span 2; /* Ocupa las dos columnas al abrirse */
             display: none;
             background: #000;
             border: 1px solid #9d00ff;
-            border-radius: 0 0 8px 8px;
-            margin-top: -5px;
+            border-radius: 10px;
             padding: 10px;
+            margin-top: -5px;
         }
         .sub-option {
             display: block;
             color: #00d4ff;
             text-decoration: none;
             padding: 12px;
+            font-size: 16px;
             border-bottom: 1px solid #222;
-            font-size: 18px;
         }
-        .sub-option:hover { color: #ff0000; background: #111; }
 
-        /* PROTEGIDO: REDES SOCIALES */
+        /* NUNCA CAMBIAR: SECCIÓN REDES SOCIALES */
         .social-section {
+            grid-column: span 2; /* Ocupa todo el ancho */
             margin-top: 20px;
             padding-top: 15px;
             border-top: 1px solid #444;
@@ -100,9 +116,9 @@
             text-decoration: none; border-radius: 5px; border: 1px solid #9d00ff;
         }
 
-        /* PROTEGIDO: PAGINA OFICIAL */
+        /* NUNCA CAMBIAR: PAGINA OFICIAL */
         footer {
-            margin-top: 20px;
+            margin-top: 25px;
             font-size: 14px;
             font-weight: bold;
             color: #ffffff;
@@ -113,57 +129,48 @@
 <body>
 
 <div class="wrapper">
-    <!-- TITULO: BLO (ROJO) + S (AZUL) + SEGUNDA S (ROJO CON ESPACIO) -->
+    <!-- NOMBRE: BLO (Rojo difuminado) + SEGUNDA S ROJA CON ESPACIO -->
     <div class="brand">
-        <span class="red">BLO</span>CK <span class="blue">S</span>UPER<span class="space-s">S</span>GMR
+        BLOCK SUPER<span class="red-s-fix">S</span>GMR
     </div>
     <div class="sub-tag">PORTAL OFICIAL 2025</div>
 
     <div class="main-panel">
         
-        <!-- Fila 1: Juegos -->
-        <div class="menu-row">
-            <div class="menu-item" onclick="toggleMenu('juegos')">🎮 JUEGOS</div>
-            <div id="juegos" class="submenu">
-                <a href="#" class="sub-option">INSTALAR JUEGOS</a>
-                <a href="#" class="sub-option">EMULADORES</a>
-            </div>
+        <!-- Botón 1 -->
+        <div class="menu-item" onclick="toggleMenu('m1')">🎮 JUEGOS</div>
+        <!-- Botón 2 -->
+        <div class="menu-item" onclick="toggleMenu('m2')">🛠️ APPS</div>
+        
+        <!-- Submenús para la fila 1 -->
+        <div id="m1" class="submenu">
+            <a href="#" class="sub-option">INSTALAR JUEGOS</a>
+            <a href="#" class="sub-option">EMULADORES</a>
+        </div>
+        <div id="m2" class="submenu">
+            <a href="#" class="sub-option">HERRAMIENTAS</a>
+            <a href="#" class="sub-option">SISTEMA</a>
         </div>
 
-        <!-- Fila 2: Apps (Restaurado) -->
-        <div class="menu-row">
-            <div class="menu-item" onclick="toggleMenu('apps')">🛠️ APPS</div>
-            <div id="apps" class="submenu">
-                <a href="#" class="sub-option">HERRAMIENTAS SISTEMA</a>
-                <a href="#" class="sub-option">MULTIMEDIA</a>
-            </div>
+        <!-- Botón 3 -->
+        <div class="menu-item" onclick="toggleMenu('m3')">📂 DESCARGAS</div>
+        <!-- Botón 4 -->
+        <div class="menu-item" onclick="toggleMenu('m4')">✨ EXTRAS</div>
+
+        <!-- Submenús para la fila 2 -->
+        <div id="m3" class="submenu">
+            <a href="#" class="sub-option">ISOS / PKGS</a>
+            <a href="#" class="sub-option">SAVEGAMES</a>
+        </div>
+        <div id="m4" class="submenu">
+            <a href="#" class="sub-option">WALLPAPERS</a>
+            <a href="#" class="sub-option">MODS</a>
         </div>
 
-        <!-- Fila 3: Descargas -->
-        <div class="menu-row">
-            <div class="menu-item" onclick="toggleMenu('descargas')">📂 DESCARGAS</div>
-            <div id="descargas" class="submenu">
-                <a href="#" class="sub-option">📥 ISOs / PKGs</a>
-                <a href="#" class="sub-option">📁 DLCs</a>
-                <a href="#" class="sub-option">💾 SAVEGAMES</a>
-            </div>
-        </div>
+        <!-- Comunidad ocupa todo el ancho abajo -->
+        <a href="#" class="menu-item" style="grid-column: span 2;">🌐 COMUNIDAD</a>
 
-        <!-- Fila 4: Extras -->
-        <div class="menu-row">
-            <div class="menu-item" onclick="toggleMenu('extras')">✨ EXTRAS</div>
-            <div id="extras" class="submenu">
-                <a href="#" class="sub-option">🖼️ WALLPAPERS</a>
-                <a href="#" class="sub-option">🎁 CONTENIDO EXTRA</a>
-            </div>
-        </div>
-
-        <!-- Fila 5: Comunidad -->
-        <div class="menu-row">
-            <a href="#" class="menu-item">🌐 COMUNIDAD</a>
-        </div>
-
-        <!-- REDES SOCIALES (NUNCA CAMBIA) -->
+        <!-- NUNCA CAMBIAR ESTO -->
         <div class="social-section">
             <div class="social-title">SÍGUEME EN MIS REDES SOCIALES</div>
             <div class="social-links">
@@ -174,7 +181,7 @@
         </div>
     </div>
 
-    <!-- PIE DE PAGINA (NUNCA CAMBIA) -->
+    <!-- NUNCA CAMBIAR ESTO -->
     <footer>
         PAGINA OFICIAL
     </footer>
