@@ -5,37 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Block SuperSGMR</title>
     <style>
-        /* ESTILO COMPATIBLE CON PS3 Y MÓVIL */
+        /* FONDO DE COLORES SUPER S GMR (ROJO, MORADO, AZUL) */
         body {
             margin: 0;
             padding: 0;
-            background-color: #000000;
-            /* SE PONE LA IMAGEN SIN FILTROS PARA QUE LA PS3 LA VEA */
-            background-image: url('fondo.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
+            min-height: 100vh;
+            /* Degradado fijo que PS3 y Celular entienden perfectamente */
+            background-color: #050505;
+            background: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
             background-attachment: fixed;
-            /* En PS3 usamos 100% para forzar el dibujo */
-            background-size: 100% 100%;
+            
             color: #ffffff;
             font-family: Arial, sans-serif;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        h1 { font-size: 32px; margin: 20px 0; }
+        h1 { 
+            font-size: 32px; 
+            margin: 30px 0 10px 0;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        
         .rojo { color: #ff0000; font-weight: bold; }
         .azul { color: #00d4ff; font-weight: bold; }
 
+        /* Panel Central compatible */
         .panel {
-            background-color: #000000; /* Fondo negro sólido para PS3 */
-            /* Si la PS3 soporta transparencia básica, se verá así: */
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #9d00ff;
-            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #ffffff;
             width: 90%;
             max-width: 500px;
-            padding: 15px;
+            padding: 20px;
             margin-top: 20px;
+            box-sizing: border-box;
         }
 
         .btn {
@@ -43,16 +48,16 @@
             background-color: #1a1a1a;
             color: #ffffff;
             text-decoration: none;
-            padding: 18px;
+            padding: 20px;
             margin: 10px 0;
-            border: 1px solid #333333;
+            border: 1px solid #444444;
             font-size: 18px;
             font-weight: bold;
         }
 
-        .btn:hover {
+        .btn:hover, .btn:active {
             background-color: #ff0000;
-            color: #000000;
+            color: #ffffff;
         }
     </style>
 </head>
