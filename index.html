@@ -3,20 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web 2025</title>
+    <title>Block SuperSGMR | Official Site</title>
     <style>
-        body { font-family: sans-serif; background: #121212; color: white; text-align: center; padding: 50px; }
-        h1 { color: #007bff; }
-        .container { background: #1e1e1e; padding: 20px; border-radius: 15px; display: inline-block; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        a { color: #007bff; text-decoration: none; font-weight: bold; }
+        /* Fondo con degradado animado */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+            /* Colores: Rojo, Morado, Azul */
+            background: linear-gradient(-45deg, #ff0000, #800080, #0000ff, #800080);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        /* Animación del fondo */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Contenedor principal */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px); /* Efecto de cristal difuminado */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            max-width: 80%;
+        }
+
+        /* Nombre Principal Estilizado */
+        h1 {
+            font-size: 4rem;
+            color: white;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+            font-weight: 900;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Efecto de brillo al nombre */
+        .glow {
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #800080; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff0000; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>¡Bienvenido a mi Nueva Web!</h1>
-        <p>Este es mi primer sitio alojado en GitHub Pages.</p>
-        <hr>
-        <p>Próximamente más contenido aquí.</p>
+
+    <div class="glass-card">
+        <h1 class="glow">Block SuperSGMR</h1>
+        <p>Bienvenido al futuro del desarrollo</p>
     </div>
+
 </body>
 </html>
