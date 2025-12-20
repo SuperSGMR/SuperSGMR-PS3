@@ -3,91 +3,158 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
+    <title>BLOGK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* ARQUITECTURA MAESTRA 2025 - ESTILO UNIFICADO */
+        /* ARQUITECTURA MAESTRA 2026 - FONDO ULTRA PIXELADO */
         body {
             background-color: #050505;
-            background-image: linear-gradient(135deg, #0000ff 0%, #1a001a 50%, #ff0000 100%);
+            background-image: 
+                linear-gradient(45deg, #000 25%, transparent 25%), 
+                linear-gradient(-45deg, #000 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #000 75%),
+                linear-gradient(-45deg, transparent 75%, #000 75%),
+                linear-gradient(45deg, rgba(0, 0, 255, 0.3) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255, 0, 0, 0.2) 25%, transparent 25%),
+                linear-gradient(135deg, #0000ff 0%, #1a001a 50%, #ff0000 100%);
+            background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 40px 40px, 40px 40px, 100% 100%;
             background-attachment: fixed;
-            background-repeat: no-repeat;
             color: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
             margin: 0; padding: 0; text-align: center;
         }
+
         .wrapper { 
             width: 100%; padding-top: 30px; padding-bottom: 30px;
-            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 3px 3px; min-height: 100vh;
+            background-image: radial-gradient(rgba(255,255,255,0.05) 2px, transparent 2px);
+            background-size: 10px 10px; 
+            min-height: 100vh;
         }
         
-        /* IDENTIDAD VISUAL */
-        .brand { font-size: 48px; font-weight: 900; text-transform: uppercase; margin-bottom: 5px; display: block; }
-        .blo-red { color: #ff0000; }
-        .super-blue { color: #00d4ff; }
-        .red-s-fix { color: #ff0000; display: inline-block; margin-left: 20px; margin-right: 20px; }
-        .sub-tag { color: #00d4ff; font-size: 18px; font-weight: bold; letter-spacing: 2px; margin-bottom: 40px; }
+        /* IDENTIDAD VISUAL - ROJO AL INICIO CON DIFUMINADO CONTINUO */
+        .brand { 
+            font-size: 48px; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            margin-bottom: 15px; 
+            display: block;
+            filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.6)) drop-shadow(0 0 8px rgba(0, 191, 255, 0.4));
+        }
+
+        .gradient-text {
+            display: inline-block;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(to right, #ff0000 0%, #9d00ff 40%, #0077ff 75%, #00ffff 100%);
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+
+        /* AJUSTE SOLICITADO: S MENOS BRILLOSA */
+        .red-s-fix { 
+            color: #ff0000; 
+            display: inline-block; 
+            margin-left: 2px; 
+            margin-right: 2px; 
+            /* Brillo reducido para una integración más suave */
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+        
+        .sub-tag { 
+            background-image: linear-gradient(to right, #ff0000, #9d00ff, #00ffff);
+            color: #ffffff;
+            font-size: 13px; 
+            font-weight: 900; 
+            letter-spacing: 1.5px; 
+            margin: 0 auto 40px;
+            padding: 2px 12px; 
+            display: inline-block;
+            border-radius: 50px; 
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), inset 0 0 8px rgba(255, 255, 255, 0.4); 
+            text-transform: uppercase;
+            border: 1.5px solid rgba(255,255,255,0.7);
+            text-shadow: 0 0 8px rgba(0,0,0,1); 
+            line-height: 1.2;
+        }
         
         .hub-container { width: 100%; max-width: 1100px; margin: 0 auto; text-align: center; }
         .menu-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         
-        /* NIVEL 1: BOTONES PRINCIPALES */
+        /* BOTONES CON TEXTO ILUMINADO */
         .menu-item { 
-            background-color: #1a1a1a; color: #ffffff; padding: 18px 10px; 
-            font-size: 20px; font-weight: bold; border: 2px solid #333; 
+            background-color: #1a1a1a; 
+            color: #ffffff; 
+            padding: 18px 10px; 
+            font-size: 20px; font-weight: bold; border: 2px solid #555; 
             border-radius: 12px; cursor: pointer; display: block; text-decoration: none; 
             transition: 0.3s;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
-        .menu-item:hover { background-color: #9d00ff; border-color: #ffffff; }
+        .menu-item:hover { 
+            background-color: #9d00ff; 
+            border-color: #ffffff; 
+            box-shadow: 0 0 20px rgba(157, 0, 255, 0.6);
+            text-shadow: 0 0 10px #fff;
+        }
 
         .submenu { 
             display: none; background-color: rgba(0, 0, 0, 0.95); 
             border: 2px solid #9d00ff; border-radius: 12px; 
             margin-top: 10px; text-align: left; overflow: hidden; 
+            box-shadow: 0 0 15px rgba(157, 0, 255, 0.3);
         }
         
-        /* NIVEL 2: SUB-BOTONES (CARPETAS) */
         .sub-btn { 
-            display: block; color: #ffffff; background: #111;
+            display: block; color: #ffffff;
+            background: #111;
             text-decoration: none; padding: 12px 15px; font-size: 15px; 
             font-weight: bold; border-bottom: 1px solid #333; cursor: pointer;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
         }
-        .sub-btn:hover { color: #ff0000; background: #222; }
+        .sub-btn:hover { color: #ff3333; background: #222; text-shadow: 0 0 8px rgba(255, 51, 51, 0.5); }
 
-        /* NIVEL 3: CONTENEDOR DE LINKS FINALES */
         .links-container {
             display: none; background: #050505; border-left: 3px solid #ff0000;
         }
+        
         .final-link {
-            display: block; color: #00d4ff; text-decoration: none;
+            display: block; 
+            color: #d1a3ff; 
+            text-decoration: none;
             padding: 12px 25px; font-size: 13px; font-weight: bold;
             border-bottom: 1px solid #1a1a1a;
+            text-shadow: 0 0 5px rgba(209, 163, 255, 0.4);
         }
-        .final-link:hover { color: #ffffff; background: #111; }
+        .final-link:hover { color: #ffffff; background: #111; text-shadow: 0 0 10px #fff; }
 
-        /* BOTÓN DE APOYO: AZUL CON BORDE ROJO */
         .paypal-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         .paypal-btn { 
             background-color: #0000ff; color: #ffffff; padding: 18px 10px; 
             font-size: 20px; font-weight: bold; border: 3px solid #ff0000; 
             border-radius: 12px; text-decoration: none; display: block; 
             box-sizing: border-box; transition: 0.3s;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
         }
-        .paypal-btn:hover { background-color: #ff0000; border-color: #00d4ff; }
+        .paypal-btn:hover { 
+            background-color: #ff0000; 
+            border-color: #9d00ff; 
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+        }
 
-        /* SECCIÓN REDES SOCIALES */
         .social-section {
             margin-top: 50px;
             padding: 20px;
             background: rgba(0, 0, 0, 0.4);
-            border-top: 1px solid rgba(157, 0, 255, 0.3);
+            border-top: 1px solid rgba(157,0,255,0.5);
+            margin-bottom: 0; 
         }
         .social-title {
-            color: #00d4ff;
+            color: #d1a3ff;
             font-size: 16px;
             font-weight: bold;
             margin-bottom: 15px;
             letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(157, 0, 255, 0.5);
         }
         .social-grid {
             display: flex;
@@ -103,119 +170,139 @@
             border-radius: 8px;
             font-size: 14px;
             font-weight: bold;
-            border: 1px solid #333;
+            border: 1px solid #444;
             transition: 0.3s;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
         }
         .social-link:hover {
-            border-color: #9d00ff;
+            border-color: #00bfff;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(157, 0, 255, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 191, 255, 0.4);
+            text-shadow: 0 0 10px #fff;
         }
         
-        footer { margin-top: 40px; font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; }
+        .official-text {
+            display: block;
+            margin: 5px auto 60px; 
+            font-size: 13px;
+            font-weight: bold; 
+            color: #ffffff;   
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 1;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
 
-        /* Ajustes para móviles */
+        footer { 
+            margin-top: 30px; 
+            padding-bottom: 40px;
+        }
+        
+        .footer-suggestion { 
+            display: block;
+            font-size: 12px; 
+            color: #ffffff;
+            font-style: italic; 
+            opacity: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.4;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
         @media (max-width: 600px) {
             .brand { font-size: 32px; }
-            .red-s-fix { margin-left: 10px; margin-right: 10px; }
+            .red-s-fix { margin-left: 1px; margin-right: 1px; }
             .menu-block, .paypal-block { width: 90%; margin: 10px auto; }
-            .social-grid { gap: 10px; }
-            .social-link { width: 120px; font-size: 12px; }
         }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <!-- IDENTIDAD VISUAL FIJA -->
     <div class="brand">
-        <span class="blo-red">BLO</span><span class="super-blue">CK SUPER</span><span class="red-s-fix">S</span><span class="super-blue">GMR</span>
+        <span class="gradient-text">BLOGK</span>
+        <span class="gradient-text">SUPER</span>
+        <span class="red-s-fix">S</span>
+        <span class="gradient-text">GMR</span>
     </div>
-    <div class="sub-tag">PORTAL OFICIAL 2025</div>
+    
+    <div class="sub-tag">WEB OFICIAL 2026</div>
 
     <div class="hub-container">
-        
-        <!-- SECCIÓN: JUEGOS -->
+        <!-- MENÚ DE JUEGOS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMain('m1')">🎮 JUEGOS</div>
+            <div class="menu-item" onclick="toggleMain('m1')"> JUEGOS</div>
             <div id="m1" class="submenu">
-                <div class="sub-btn" onclick="toggleSub('s1')">📂 INSTALAR PKG</div>
+                <div class="sub-btn" onclick="toggleSub('s1')"> INSTALAR PKG</div>
                 <div id="s1" class="links-container">
-                    <a href="#" target="_blank" class="final-link">➤ Link 1 (Mediafire)</a>
+                    <a href="https://www.mediafire.com" target="_blank" class="final-link">➤ Link 1 (Mediafire)</a>
                     <a href="#" target="_blank" class="final-link">➤ Link 2 (Reserva)</a>
                 </div>
-                
-                <div class="sub-btn" onclick="toggleSub('s2')">📂 JG_PS2 PKG</div>
+                <div class="sub-btn" onclick="toggleSub('s2')"> JG_PS2 PKG</div>
                 <div id="s2" class="links-container">
                     <a href="#" target="_blank" class="final-link">➤ Juego PS2 PKG</a>
                 </div>
-
-                <div class="sub-btn" onclick="toggleSub('s3')">📂 EMULADORES PKG</div>
+                <div class="sub-btn" onclick="toggleSub('s3')"> EMULADORES PKG</div>
                 <div id="s3" class="links-container">
                     <a href="#" target="_blank" class="final-link">➤ Pack Emuladores</a>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN: APPS -->
+        <!-- MENÚ DE APPS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMain('m2')">🛠️ APPS</div>
+            <div class="menu-item" onclick="toggleMain('m2')"> APPS</div>
             <div id="m2" class="submenu">
-                <div class="sub-btn" onclick="toggleSub('s4')">📂 MULTIMAN</div>
+                <div class="sub-btn" onclick="toggleSub('s4')"> MULTIMAN</div>
                 <div id="s4" class="links-container">
                     <a href="#" target="_blank" class="final-link">➤ Descargar MultiMan</a>
                 </div>
-
-                <div class="sub-btn" onclick="toggleSub('s5')">📂 IRISMAN</div>
+                <div class="sub-btn" onclick="toggleSub('s5')"> IRISMAN</div>
                 <div id="s5" class="links-container">
                     <a href="#" target="_blank" class="final-link">➤ Descargar IrisMan</a>
                 </div>
-
-                <div class="sub-btn" onclick="toggleSub('s6')">📂 WEBMAN MOD</div>
+                <div class="sub-btn" onclick="toggleSub('s6')"> WEBMAN MOD</div>
                 <div id="s6" class="links-container">
                     <a href="https://www.mediafire.com/file/s59exu8g71r93yi/webMAN_MOD_1.47.48_SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Descargar WebMan Mod</a>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN: TIENDAS -->
+        <!-- MENÚ DE TIENDAS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMain('m3')">🏪 TIENDAS</div>
+            <div class="menu-item" onclick="toggleMain('m3')"> TIENDAS</div>
             <div id="m3" class="submenu">
-                <div class="sub-btn" onclick="toggleSub('s7')">📂 VIDEOSTORE SCZ</div>
+                <div class="sub-btn" onclick="toggleSub('s7')"> VIDEOSTORE SCZ</div>
                 <div id="s7" class="links-container">
                   <a href="https://www.mediafire.com/file/scrcgunrqvprsuq/VideoStore.4.0.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Descargar VideoStore</a>
                 </div>
-
-                <div class="sub-btn" onclick="toggleSub('s8')">📂 ZUKOSTORE</div>
+                <div class="sub-btn" onclick="toggleSub('s8')"> ZUKOSTORE</div>
                 <div id="s8" class="links-container">
                     <a href="#" target="_blank" class="final-link">➤ Descargar ZukoStore</a>
                 </div>
-
-                <div class="sub-btn" onclick="toggleSub('s9')">📂 PKGI</div>
+                <div class="sub-btn" onclick="toggleSub('s9')"> PKGI</div>
                 <div id="s9" class="links-container">
                     <a href="#" target="_blank" class="final-link">➤ Configuración PKGi</a>
                 </div>
-
-                <div class="sub-btn" onclick="toggleSub('s10')">📂 MULTI FIX</div>
+                <div class="sub-btn" onclick="toggleSub('s10')"> MULTI FIX</div>
                 <div id="s10" class="links-container">
                   <a href="https://www.mediafire.com/file/dog622lv9egj9je/FIX_STORES_HEN_OFICIAL_4.92.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Descargar Fix Oficial</a>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN: EXTRAS -->
+        <!-- EXTRAS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMain('m4')">✨ EXTRAS</div>
+            <div class="menu-item" onclick="toggleMain('m4')"> EXTRAS</div>
             <div id="m4" class="submenu">
-                <div class="sub-btn" onclick="toggleSub('s11')">📂 DESCARGAS</div>
+                <div class="sub-btn" onclick="toggleSub('s11')"> DESCARGAS</div>
                 <div id="s11" class="links-container">
                     <a href="#" target="_blank" class="final-link">➤ Contenido Adicional</a>
                 </div>
             </div>
         </div>
 
-        <!-- BOTÓN DE APOYO -->
         <div class="paypal-block">
             <a href="https://buymeacoffee.com/supersgmr" target="_blank" class="paypal-btn">
                 ☕ APOYAR PROYECTO
@@ -223,19 +310,23 @@
         </div>
     </div>
 
-    <!-- SECCIÓN REDES SOCIALES ACTUALIZADA -->
+    <!-- SECCIÓN SOCIAL -->
     <div class="social-section">
         <div class="social-title">SÍGUEME COMO @SUPERSGMR</div>
         <div class="social-grid">
-            <a href="https://www.youtube.com/@SuperSGMR" target="_blank" class="social-link">🎥 YOUTUBE</a>
-            <a href="https://tiktok.com/@super.s.gmr?_t=8sNX1UvAA6b&_r=1" target="_blank" class="social-link">🎵 TIKTOK</a>
-            <a href="https://discord.gg/Bt5cCYn5" target="_blank" class="social-link">💬 DISCORD</a>
-            <a href="https://www.twitch.tv/supersgmr" target="_blank" class="social-link">🎮 TWITCH</a>
-            <a href="https://facebook.com/sergio00solanomuwvj" target="_blank" class="social-link">📘 FACEBOOK</a>
+            <a href="https://www.youtube.com/@SuperSGMR" target="_blank" class="social-link"> YOUTUBE</a>
+            <a href="https://tiktok.com/@super.s.gmr?_t=8sNX1UvAA6b&_r=1" target="_blank" class="social-link"> TIKTOK</a>
+            <a href="https://discord.gg/Bt5cCYn5" target="_blank" class="social-link"> DISCORD</a>
+            <a href="https://www.twitch.tv/supersgmr" target="_blank" class="social-link"> TWITCH</a>
+            <a href="https://facebook.com/sergio00solanomuwvj" target="_blank" class="social-link"> FACEBOOK</a>
         </div>
     </div>
 
-    <footer>PAGINA OFICIAL</footer>
+    <span class="official-text">PAGINA OFICIAL</span>
+
+    <footer>
+        <span class="footer-suggestion"> Sugerencia: Si algún enlace falla, infórmalo en nuestro canal de Discord para arreglarlo rápido.</span>
+    </footer>
 </div>
 
 <script>
