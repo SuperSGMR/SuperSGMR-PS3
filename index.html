@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* ARQUITECTURA MAESTRA 2025 - SIN MODIFICACIONES */
+        /* ARQUITECTURA MAESTRA 2025 - BLINDADA */
         body {
             background-color: #050505;
             background-image: linear-gradient(135deg, #0000ff 0%, #1a001a 50%, #ff0000 100%);
@@ -20,8 +20,6 @@
             background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 3px 3px; min-height: 100vh;
         }
-        
-        /* NOMBRE PROTEGIDO: BLO + S ROJA CON ESPACIO */
         .brand { font-size: 48px; font-weight: 900; text-transform: uppercase; margin-bottom: 5px; display: block; }
         .blo-red { color: #ff0000; }
         .super-blue { color: #00d4ff; }
@@ -31,34 +29,46 @@
         .hub-container { width: 100%; max-width: 1100px; margin: 0 auto; text-align: center; }
         .menu-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         
+        /* Botón Nivel 1 */
         .menu-item { 
             background-color: #1a1a1a; color: #ffffff; padding: 18px 10px; 
             font-size: 20px; font-weight: bold; border: 2px solid #333; 
-            border-radius: 12px; cursor: pointer; display: block; text-decoration: none; 
+            border-radius: 12px; cursor: pointer; display: block;
         }
         .menu-item:hover { background-color: #9d00ff; border-color: #ffffff; }
 
+        /* Submenú Nivel 2 */
         .submenu { 
             display: none; background-color: rgba(0, 0, 0, 0.95); 
             border: 2px solid #9d00ff; border-radius: 12px; 
             margin-top: 10px; text-align: left; overflow: hidden; 
         }
         
-        .sub-option { 
-            display: block; color: #00d4ff; text-decoration: none; 
-            padding: 15px 20px; font-size: 15px; font-weight: bold; 
-            border-bottom: 1px solid #222; 
+        /* Botón Nivel 2 (Sub-categorías) */
+        .sub-category { 
+            display: block; color: #ffffff; background: #111;
+            padding: 12px 15px; font-size: 15px; font-weight: bold; 
+            border-bottom: 1px solid #333; cursor: pointer;
         }
-        .sub-option:hover { background-color: #111; color: #ff0000; }
-        .sub-option span { display: block; font-size: 11px; color: #aaa; font-weight: normal; }
+        .sub-category:hover { color: #ff0000; }
 
-        /* BOTÓN DE APOYO: AZUL CON BORDE ROJO */
+        /* Lista Final Nivel 3 (Los Links) */
+        .link-list { 
+            display: none; background-color: #050505; 
+            padding: 5px 0; border-left: 3px solid #ff0000;
+        }
+        .final-link { 
+            display: block; color: #00d4ff; text-decoration: none; 
+            padding: 10px 25px; font-size: 13px; font-weight: bold;
+        }
+        .final-link:hover { background: #222; color: #ffffff; }
+
+        /* BOTÓN DE APOYO */
         .paypal-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         .paypal-btn { 
             background-color: #0000ff; color: #ffffff; padding: 18px 10px; 
             font-size: 20px; font-weight: bold; border: 3px solid #ff0000; 
             border-radius: 12px; text-decoration: none; display: block; 
-            box-sizing: border-box; 
         }
         
         footer { margin-top: 60px; font-size: 14px; font-weight: bold; color: #ffffff; text-transform: uppercase; }
@@ -76,41 +86,56 @@
         
         <!-- JUEGOS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMenu('m1')">🎮 JUEGOS</div>
+            <div class="menu-item" onclick="toggleMain('m1')">🎮 JUEGOS</div>
             <div id="m1" class="submenu">
-                <a href="URL_AQUI" target="_blank" class="sub-option">INSTALAR PKG <span>(Opción 1)</span></a>
-                <a href="URL_AQUI" target="_blank" class="sub-option">INSTALAR PKG <span>(Opción 2)</span></a>
-                <a href="URL_AQUI" target="_blank" class="sub-option">JG_PS2 PKG <span>(Descarga directa)</span></a>
-                <a href="URL_AQUI" target="_blank" class="sub-option">EMULADORES PKG <span>(Multi-consola)</span></a>
+                <div class="sub-category" onclick="toggleSub('s1')">📂 INSTALAR PKG</div>
+                <div id="s1" class="link-list">
+                    <a href="LINK_AQUI" target="_blank" class="final-link">➤ Descargar PKG v1</a>
+                    <a href="LINK_AQUI" target="_blank" class="final-link">➤ Descargar PKG v2</a>
+                </div>
+                
+                <div class="sub-category" onclick="toggleSub('s2')">📂 JG_PS2 PKG</div>
+                <div id="s2" class="link-list">
+                    <a href="LINK_AQUI" target="_blank" class="final-link">➤ Juego PS2 Ejemplo</a>
+                </div>
             </div>
         </div>
 
         <!-- APPS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMenu('m2')">🛠️ APPS</div>
+            <div class="menu-item" onclick="toggleMain('m2')">🛠️ APPS</div>
             <div id="m2" class="submenu">
-                <a href="URL_AQUI" target="_blank" class="sub-option">MULTIMAN <span>(Gestor v4.85)</span></a>
-                <a href="URL_AQUI" target="_blank" class="sub-option">IRISMAN <span>(Backup manager)</span></a>
-                <a href="URL_AQUI" target="_blank" class="sub-option">WEBMAN MOD <span>(Configuración)</span></a>
+                <div class="sub-category" onclick="toggleSub('s3')">📂 MULTIMAN</div>
+                <div id="s3" class="link-list">
+                    <a href="LINK_AQUI" target="_blank" class="final-link">➤ Descargar MultiMan</a>
+                </div>
             </div>
         </div>
 
         <!-- TIENDAS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMenu('m3')">🏪 TIENDAS</div>
+            <div class="menu-item" onclick="toggleMain('m3')">🏪 TIENDAS</div>
             <div id="m3" class="submenu">
-                <a href="URL_AQUI" target="_blank" class="sub-option">VIDEOSTORE SCZ <span>(Tienda oficial)</span></a>
-                <a href="URL_AQUI" target="_blank" class="sub-option">ZUKOSTORE <span>(Tienda PKG)</span></a>
-                <a href="URL_AQUI" target="_blank" class="sub-option">PKGI <span>(Direct Download)</span></a>
+                <div class="sub-category" onclick="toggleSub('s4')">📂 VIDEOSTORE SCZ</div>
+                <div id="s4" class="link-list">
+                    <a href="LINK_AQUI" target="_blank" class="final-link">➤ Tienda SCZ v4.0</a>
+                </div>
+                
+                <div class="sub-category" onclick="toggleSub('s5')">📂 MULTI FIX</div>
+                <div id="s5" class="link-list">
+                    <a href="LINK_AQUI" target="_blank" class="final-link">➤ Descargar Multi Fix</a>
+                </div>
             </div>
         </div>
 
         <!-- EXTRAS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMenu('m4')">✨ EXTRAS</div>
+            <div class="menu-item" onclick="toggleMain('m4')">✨ EXTRAS</div>
             <div id="m4" class="submenu">
-                <a href="URL_AQUI" target="_blank" class="sub-option">DESCARGAS <span>(Herramientas)</span></a>
-                <a href="URL_AQUI" target="_blank" class="sub-option">WALLPAPERS <span>(Personalización)</span></a>
+                <div class="sub-category" onclick="toggleSub('s6')">📂 DESCARGAS</div>
+                <div id="s6" class="link-list">
+                    <a href="LINK_AQUI" target="_blank" class="final-link">➤ Contenido Extra</a>
+                </div>
             </div>
         </div>
 
@@ -124,13 +149,24 @@
 </div>
 
 <script>
-    function toggleMenu(id) {
+    // Función para los botones principales (Juegos, Apps...)
+    function toggleMain(id) {
         var menu = document.getElementById(id);
-        var ids = ['m1', 'm2', 'm3', 'm4'];
-        for (var i = 0; i < ids.length; i++) {
-            if (ids[i] !== id) document.getElementById(ids[i]).style.display = 'none';
+        var submenus = document.getElementsByClassName("submenu");
+        for (var i = 0; i < submenus.length; i++) {
+            if (submenus[i].id !== id) submenus[i].style.display = "none";
         }
-        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // Función para las sub-categorías (Instalar PKG, Multi Fix...)
+    function toggleSub(id) {
+        var list = document.getElementById(id);
+        var lists = document.getElementsByClassName("link-list");
+        for (var i = 0; i < lists.length; i++) {
+            if (lists[i].id !== id) lists[i].style.display = "none";
+        }
+        list.style.display = (list.style.display === "block") ? "none" : "block";
     }
 </script>
 
