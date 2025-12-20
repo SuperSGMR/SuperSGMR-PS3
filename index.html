@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOGK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* ARQUITECTURA MAESTRA 2026 - FONDO ULTRA PIXELADO */
+        /* FONDO OPTIMIZADO PARA PS3 - PIXELADO Y DIFUMINADO */
         body {
             background-color: #050505;
+            /* Patrón de píxeles simplificado para compatibilidad con PS3 */
             background-image: 
-                linear-gradient(45deg, #000 25%, transparent 25%), 
-                linear-gradient(-45deg, #000 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, #000 75%),
-                linear-gradient(-45deg, transparent 75%, #000 75%),
-                linear-gradient(45deg, rgba(0, 0, 255, 0.3) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(255, 0, 0, 0.2) 25%, transparent 25%),
-                linear-gradient(135deg, #0000ff 0%, #1a001a 50%, #ff0000 100%);
-            background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 40px 40px, 40px 40px, 100% 100%;
+                radial-gradient(circle, #1a0033 1px, transparent 1px),
+                linear-gradient(to bottom, #050505, #100020, #050505);
+            background-size: 4px 4px, 100% 100%;
             background-attachment: fixed;
             color: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
@@ -25,19 +21,20 @@
 
         .wrapper { 
             width: 100%; padding-top: 30px; padding-bottom: 30px;
-            background-image: radial-gradient(rgba(255,255,255,0.05) 2px, transparent 2px);
-            background-size: 10px 10px; 
+            /* Capa de difuminado sobre el pixelado */
+            background: rgba(0, 0, 0, 0.4);
             min-height: 100vh;
         }
         
-        /* IDENTIDAD VISUAL - ROJO AL INICIO CON DIFUMINADO CONTINUO */
+        /* IDENTIDAD VISUAL - ARQUITECTURA FIJA */
         .brand { 
             font-size: 48px; 
             font-weight: 900; 
             text-transform: uppercase; 
             margin-bottom: 15px; 
             display: block;
-            filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.6)) drop-shadow(0 0 8px rgba(0, 191, 255, 0.4));
+            /* Filtros limitados para mejor rendimiento en PS3 */
+            filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
         }
 
         .gradient-text {
@@ -46,20 +43,18 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             background-image: linear-gradient(to right, #ff0000 0%, #9d00ff 40%, #0077ff 75%, #00ffff 100%);
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
         }
 
-        /* AJUSTE SOLICITADO: S MENOS BRILLOSA */
         .red-s-fix { 
             color: #ff0000; 
             display: inline-block; 
             margin-left: 2px; 
             margin-right: 2px; 
-            /* Brillo reducido para una integración más suave */
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 0 0 5px rgba(255, 255, 255, 0.3);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
         }
         
         .sub-tag { 
+            background: #ff0000;
             background-image: linear-gradient(to right, #ff0000, #9d00ff, #00ffff);
             color: #ffffff;
             font-size: 13px; 
@@ -69,17 +64,15 @@
             padding: 2px 12px; 
             display: inline-block;
             border-radius: 50px; 
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), inset 0 0 8px rgba(255, 255, 255, 0.4); 
             text-transform: uppercase;
             border: 1.5px solid rgba(255,255,255,0.7);
-            text-shadow: 0 0 8px rgba(0,0,0,1); 
             line-height: 1.2;
         }
         
         .hub-container { width: 100%; max-width: 1100px; margin: 0 auto; text-align: center; }
         .menu-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         
-        /* BOTONES CON TEXTO ILUMINADO */
+        /* BOTONES - ARQUITECTURA FIJA */
         .menu-item { 
             background-color: #1a1a1a; 
             color: #ffffff; 
@@ -87,20 +80,16 @@
             font-size: 20px; font-weight: bold; border: 2px solid #555; 
             border-radius: 12px; cursor: pointer; display: block; text-decoration: none; 
             transition: 0.3s;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
         .menu-item:hover { 
             background-color: #9d00ff; 
             border-color: #ffffff; 
-            box-shadow: 0 0 20px rgba(157, 0, 255, 0.6);
-            text-shadow: 0 0 10px #fff;
         }
 
         .submenu { 
-            display: none; background-color: rgba(0, 0, 0, 0.95); 
+            display: none; background-color: #000000; 
             border: 2px solid #9d00ff; border-radius: 12px; 
             margin-top: 10px; text-align: left; overflow: hidden; 
-            box-shadow: 0 0 15px rgba(157, 0, 255, 0.3);
         }
         
         .sub-btn { 
@@ -108,9 +97,8 @@
             background: #111;
             text-decoration: none; padding: 12px 15px; font-size: 15px; 
             font-weight: bold; border-bottom: 1px solid #333; cursor: pointer;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
         }
-        .sub-btn:hover { color: #ff3333; background: #222; text-shadow: 0 0 8px rgba(255, 51, 51, 0.5); }
+        .sub-btn:hover { color: #ff3333; background: #222; }
 
         .links-container {
             display: none; background: #050505; border-left: 3px solid #ff0000;
@@ -122,9 +110,8 @@
             text-decoration: none;
             padding: 12px 25px; font-size: 13px; font-weight: bold;
             border-bottom: 1px solid #1a1a1a;
-            text-shadow: 0 0 5px rgba(209, 163, 255, 0.4);
         }
-        .final-link:hover { color: #ffffff; background: #111; text-shadow: 0 0 10px #fff; }
+        .final-link:hover { color: #ffffff; background: #111; }
 
         .paypal-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         .paypal-btn { 
@@ -132,19 +119,16 @@
             font-size: 20px; font-weight: bold; border: 3px solid #ff0000; 
             border-radius: 12px; text-decoration: none; display: block; 
             box-sizing: border-box; transition: 0.3s;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
         }
         .paypal-btn:hover { 
             background-color: #ff0000; 
             border-color: #9d00ff; 
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
         }
 
         .social-section {
             margin-top: 50px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             border-top: 1px solid rgba(157,0,255,0.5);
             margin-bottom: 0; 
         }
@@ -154,7 +138,6 @@
             font-weight: bold;
             margin-bottom: 15px;
             letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(157, 0, 255, 0.5);
         }
         .social-grid {
             display: flex;
@@ -172,13 +155,9 @@
             font-weight: bold;
             border: 1px solid #444;
             transition: 0.3s;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
         }
         .social-link:hover {
             border-color: #00bfff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0, 191, 255, 0.4);
-            text-shadow: 0 0 10px #fff;
         }
         
         .official-text {
@@ -189,8 +168,6 @@
             color: #ffffff;   
             text-transform: uppercase;
             letter-spacing: 3px;
-            opacity: 1;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         footer { 
@@ -203,16 +180,13 @@
             font-size: 12px; 
             color: #ffffff;
             font-style: italic; 
-            opacity: 1;
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.4;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
         }
 
         @media (max-width: 600px) {
             .brand { font-size: 32px; }
-            .red-s-fix { margin-left: 1px; margin-right: 1px; }
             .menu-block, .paypal-block { width: 90%; margin: 10px auto; }
         }
     </style>
@@ -310,7 +284,6 @@
         </div>
     </div>
 
-    <!-- SECCIÓN SOCIAL -->
     <div class="social-section">
         <div class="social-title">SÍGUEME COMO @SUPERSGMR</div>
         <div class="social-grid">
