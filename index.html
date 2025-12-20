@@ -18,7 +18,6 @@
             font-family: Arial, Helvetica, sans-serif;
             margin: 0; padding: 0; text-align: center;
             overflow-x: hidden;
-            /* Mejora de rendimiento en navegadores antiguos */
             -webkit-font-smoothing: antialiased;
         }
 
@@ -85,6 +84,7 @@
         .hub-container { width: 100%; max-width: 1100px; margin: 0 auto; text-align: center; }
         .menu-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         
+        /* ITEM DE MENÚ CON ANIMACIÓN DE ACERCAMIENTO */
         .menu-item { 
             background-color: #1a1a1a; 
             color: #ffffff; 
@@ -92,17 +92,20 @@
             font-size: 20px; font-weight: bold; 
             border: 2px solid #9d00ff; 
             border-radius: 12px; cursor: pointer; display: block; text-decoration: none; 
-            transition: background 0.2s;
+            transition: all 0.2s ease-out; /* Animación suave */
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
+            transform: scale(1); /* Estado inicial para la GPU */
         }
 
-        /* EFECTO DE BRILLO OPTIMIZADO (SIN ANIMACIONES CONTINUAS PARA EVITAR LAG) */
+        /* ANIMACIÓN DE ACERCAMIENTO OPTIMIZADA */
         .menu-item:hover { 
             background-color: #9d00ff; 
             border-color: #ffffff; 
-            box-shadow: 0 0 15px rgba(157, 0, 255, 0.6);
+            box-shadow: 0 0 20px rgba(157, 0, 255, 0.8);
+            transform: scale(1.05); /* Acercamiento suave */
+            z-index: 10;
         }
 
         .submenu { 
@@ -116,8 +119,9 @@
             background: #111;
             text-decoration: none; padding: 12px 15px; font-size: 15px; 
             font-weight: bold; border-bottom: 1px solid #333; cursor: pointer;
+            transition: background 0.2s;
         }
-        .sub-btn:hover { color: #ff3333; background: #222; }
+        .sub-btn:hover { color: #ff3333; background: #222; padding-left: 20px; }
 
         .links-container {
             display: none; background: #050505; border-left: 3px solid #ff0000;
@@ -129,11 +133,13 @@
             text-decoration: none;
             padding: 12px 25px; font-size: 13px; font-weight: bold;
             border-bottom: 1px solid #1a1a1a;
+            transition: color 0.2s;
         }
         .final-link:hover { color: #ffffff; background: #111; }
         
         .pending-link { color: #555 !important; cursor: default; }
 
+        /* BOTÓN DE APOYO CON ANIMACIÓN */
         .paypal-block { display: inline-block; width: 350px; margin: 10px; vertical-align: top; }
         .paypal-btn { 
             background: linear-gradient(45deg, #0000ff, #9d00ff);
@@ -146,14 +152,15 @@
             text-decoration: none; 
             display: block; 
             box-sizing: border-box; 
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(157, 0, 255, 0.4);
             text-transform: uppercase;
+            transform: scale(1);
         }
         .paypal-btn:hover { 
             background: linear-gradient(45deg, #ff0000, #9d00ff);
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
-            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+            transform: scale(1.05); /* Acercamiento en apoyo */
         }
         .btn-glow {
             font-size: 11px;
@@ -192,11 +199,12 @@
             font-size: 14px;
             font-weight: bold;
             border: 2px solid #9d00ff; 
-            transition: 0.2s;
+            transition: transform 0.2s;
         }
         .social-link:hover {
             background-color: #9d00ff;
             box-shadow: 0 0 10px rgba(157, 0, 255, 0.7);
+            transform: translateY(-3px);
         }
         
         .official-text {
@@ -209,7 +217,6 @@
             letter-spacing: 3px;
         }
 
-        /* OPTIMIZACIÓN MÓVIL Y PS3 RESOLUTION */
         @media (max-width: 600px) {
             .brand { font-size: 32px; }
             .menu-block, .paypal-block { width: 90%; margin: 10px auto; }
@@ -341,13 +348,12 @@
 </div>
 
 <script>
-    // Reloj optimizado para bajo consumo de CPU
     function updateClock() {
         var now = new Date();
         var time = now.getHours().toString().replace(/^(\d)$/, "0$1") + ":" + 
                    now.getMinutes().toString().replace(/^(\d)$/, "0$1") + ":" + 
                    now.getSeconds().toString().replace(/^(\d)$/, "0$1");
-        document.getElementById('clock').innerHTML = time;
+        if(document.getElementById('clock')) document.getElementById('clock').innerHTML = time;
     }
     setInterval(updateClock, 1000);
     updateClock();
