@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOGK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* FONDO PERSONALIZADO CON COLORES SUPER S GMR - OPTIMIZADO PARA PS3 */
+        /* FONDO PERSONALIZADO OPTIMIZADO PARA HARDWARE PS3 */
         body {
             background-color: #050505;
             background-image: 
                 radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.15) 0%, transparent 40%),
                 radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle, #1a0033 1px, transparent 1px),
                 linear-gradient(135deg, #050505 0%, #1a001a 35%, #000033 70%, #050505 100%);
-            background-size: 100% 100%, 100% 100%, 6px 6px, 100% 100%;
+            background-size: 100% 100%;
             background-attachment: fixed;
             color: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
             margin: 0; padding: 0; text-align: center;
             overflow-x: hidden;
+            /* Mejora de rendimiento en navegadores antiguos */
+            -webkit-font-smoothing: antialiased;
         }
 
         .wrapper { 
@@ -41,7 +42,7 @@
         }
         .live-indicator { color: #00ff00; text-shadow: 0 0 5px #00ff00; }
         
-        /* TÍTULO OPTIMIZADO PARA PS3 */
+        /* TÍTULO CON SOMBRAS OPTIMIZADAS */
         .brand { 
             font-size: 48px; 
             font-weight: 900; 
@@ -49,7 +50,7 @@
             margin-bottom: 15px; 
             margin-top: 10px;
             display: block;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.8);
         }
 
         /* Colores individuales */
@@ -62,23 +63,22 @@
             display: inline-block; 
             margin-left: 2px; 
             margin-right: 2px; 
-            text-shadow: 0 0 15px #ff0000, 0 0 5px #ffffff;
+            text-shadow: 0 0 10px #ff0000;
         }
         
         .sub-tag { 
-            background: #ff0000;
-            background-image: linear-gradient(to right, #ff0000, #9d00ff, #00ffff);
+            background: linear-gradient(to right, #ff0000, #9d00ff, #00ffff);
             color: #ffffff;
             font-size: 13px; 
             font-weight: 900; 
             letter-spacing: 1.5px; 
             margin: 0 auto 40px;
-            padding: 2px 12px; 
+            padding: 4px 15px; 
             display: inline-block;
             border-radius: 50px; 
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); 
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
             text-transform: uppercase;
-            border: 1.5px solid rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.5);
             line-height: 1.2;
         }
         
@@ -92,47 +92,32 @@
             font-size: 20px; font-weight: bold; 
             border: 2px solid #9d00ff; 
             border-radius: 12px; cursor: pointer; display: block; text-decoration: none; 
-            transition: 0.3s;
+            transition: background 0.2s;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
         }
 
-        .menu-item::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -60%;
-            width: 20%; height: 200%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(30deg);
-            transition: 0.6s;
-        }
-        .menu-item:hover::after { left: 120%; }
-
+        /* EFECTO DE BRILLO OPTIMIZADO (SIN ANIMACIONES CONTINUAS PARA EVITAR LAG) */
         .menu-item:hover { 
             background-color: #9d00ff; 
             border-color: #ffffff; 
             box-shadow: 0 0 15px rgba(157, 0, 255, 0.6);
-            transform: translateY(-2px);
         }
 
         .submenu { 
             display: none; background-color: rgba(0, 0, 0, 0.95); 
             border: 2px solid #9d00ff; border-radius: 12px; 
             margin-top: 10px; text-align: left; overflow: hidden;
-            animation: slideDown 0.3s ease-out;
         }
-        
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         
         .sub-btn { 
             display: block; color: #ffffff;
             background: #111;
             text-decoration: none; padding: 12px 15px; font-size: 15px; 
             font-weight: bold; border-bottom: 1px solid #333; cursor: pointer;
-            transition: 0.2s;
         }
-        .sub-btn:hover { color: #ff3333; background: #222; padding-left: 20px; }
+        .sub-btn:hover { color: #ff3333; background: #222; }
 
         .links-container {
             display: none; background: #050505; border-left: 3px solid #ff0000;
@@ -161,33 +146,27 @@
             text-decoration: none; 
             display: block; 
             box-sizing: border-box; 
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 20px rgba(157, 0, 255, 0.4);
-            position: relative;
-            overflow: hidden;
+            transition: transform 0.2s;
+            box-shadow: 0 5px 15px rgba(157, 0, 255, 0.4);
             text-transform: uppercase;
         }
         .paypal-btn:hover { 
             background: linear-gradient(45deg, #ff0000, #9d00ff);
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
-            transform: scale(1.03) translateY(-5px);
-            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+            transform: scale(1.02);
         }
         .btn-glow {
             font-size: 11px;
             display: block;
             margin-top: 6px;
-            opacity: 0.9;
-            font-weight: bold;
-            letter-spacing: 0.5px;
             color: #00ffff;
-            text-shadow: 0 0 5px #000;
+            font-weight: bold;
         }
 
         .social-section {
             margin-top: 50px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.8);
             border-top: 1px solid rgba(157,0,255,0.5);
         }
         .social-title {
@@ -213,32 +192,27 @@
             font-size: 14px;
             font-weight: bold;
             border: 2px solid #9d00ff; 
-            transition: 0.3s;
-            display: inline-block;
+            transition: 0.2s;
         }
         .social-link:hover {
             background-color: #9d00ff;
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(157, 0, 255, 0.7);
-            border-color: #ffffff;
-            transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(157, 0, 255, 0.7);
         }
         
         .official-text {
             display: block;
-            margin: 5px auto 60px; 
+            margin: 15px auto 40px; 
             font-size: 13px;
             font-weight: bold; 
-            color: #ffffff;   
+            color: rgba(255,255,255,0.5);   
             text-transform: uppercase;
             letter-spacing: 3px;
-            opacity: 0.6;
         }
 
+        /* OPTIMIZACIÓN MÓVIL Y PS3 RESOLUTION */
         @media (max-width: 600px) {
             .brand { font-size: 32px; }
             .menu-block, .paypal-block { width: 90%; margin: 10px auto; }
-            .status-bar { padding: 0 10px; font-size: 10px; }
         }
     </style>
 </head>
@@ -274,7 +248,7 @@
                 </div>
                 <div class="sub-btn" onclick="toggleSub('s3')"> EMULADORES PKG</div>
                 <div id="s3" class="links-container">
-                    <a href="https://www.mediafire.com/file/0m0k0cqg65btpdd/RetroArch.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link RetroArch</a>
+                    <a href="https://www.mediafire.com/file/0m0k0cqg65btpdd/RetroArch.SGMR.pkg/file" target="_blank" class="final-link">➤ Link RetroArch</a>
                 </div>
             </div>
         </div>
@@ -285,15 +259,15 @@
             <div id="m2" class="submenu">
                 <div class="sub-btn" onclick="toggleSub('s4')"> APOLLO</div>
                 <div id="s4" class="links-container">
-                    <a href="https://www.mediafire.com/file/pgydpa60xvn14dn/Apollo-ps3.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link Apollo</a>
+                    <a href="https://www.mediafire.com/file/pgydpa60xvn14dn/Apollo-ps3.SGMR.pkg/file" target="_blank" class="final-link">➤ Link Apollo</a>
                 </div>
                 <div class="sub-btn" onclick="toggleSub('s5')"> MULTIMAN</div>
                 <div id="s5" class="links-container">
-                    <a href="https://www.mediafire.com/file/aqpf3sj5ry6k46d/Multiman.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link Multiman</a>
+                    <a href="https://www.mediafire.com/file/aqpf3sj5ry6k46d/Multiman.SGMR.pkg/file" target="_blank" class="final-link">➤ Link Multiman</a>
                 </div>
                 <div class="sub-btn" onclick="toggleSub('s6')"> WEBMAN MOD</div>
                 <div id="s6" class="links-container">
-                    <a href="https://www.mediafire.com/file/s59exu8g71r93yi/webMAN_MOD_1.47.48_SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link WebMan Mod</a>
+                    <a href="https://www.mediafire.com/file/s59exu8g71r93yi/webMAN_MOD_1.47.48_SGMR.pkg/file" target="_blank" class="final-link">➤ Link WebMan Mod</a>
                 </div>
             </div>
         </div>
@@ -304,19 +278,19 @@
             <div id="m3" class="submenu">
                 <div class="sub-btn" onclick="toggleSub('s7')"> VIDEOSTORE SCZ</div>
                 <div id="s7" class="links-container">
-                  <a href="https://www.mediafire.com/file/scrcgunrqvprsuq/VideoStore.4.0.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link VideoStore</a>
+                  <a href="https://www.mediafire.com/file/scrcgunrqvprsuq/VideoStore.4.0.SGMR.pkg/file" target="_blank" class="final-link">➤ Link VideoStore</a>
                 </div>
                 <div class="sub-btn" onclick="toggleSub('s8')"> ZUKOSTORE</div>
                 <div id="s8" class="links-container">
-                  <a href="https://www.mediafire.com/file/1d0jnxndp1wo2y4/ZukoStore.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link ZukoStore</a>
+                  <a href="https://www.mediafire.com/file/1d0jnxndp1wo2y4/ZukoStore.SGMR.pkg/file" target="_blank" class="final-link">➤ Link ZukoStore</a>
                 </div>
                 <div class="sub-btn" onclick="toggleSub('s9')"> PKGI</div>
                 <div id="s9" class="links-container">
-                  <a href="https://www.mediafire.com/file/g082kr997f2ciad/PKGI.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link PKGI-1</a>
+                  <a href="https://www.mediafire.com/file/g082kr997f2ciad/PKGI.SGMR.pkg/file" target="_blank" class="final-link">➤ Link PKGI-1</a>
                 </div>
                 <div class="sub-btn" onclick="toggleSub('s10')"> MULTI FIX</div>
                 <div id="s10" class="links-container">
-                  <a href="https://www.mediafire.com/file/zqkxf0mclj00k8v/MULTI_FIX_HEN_4.92.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link MultiFix</a>
+                  <a href="https://www.mediafire.com/file/zqkxf0mclj00k8v/MULTI_FIX_HEN_4.92.SGMR.pkg/file" target="_blank" class="final-link">➤ Link MultiFix</a>
                 </div>
             </div>
         </div>
@@ -327,18 +301,18 @@
             <div id="m4" class="submenu">
                 <div class="sub-btn" onclick="toggleSub('s11')"> APP MOVIL</div>
                 <div id="s11" class="links-container">
-                    <a href="https://www.mediafire.com/file/813iyv4nqcuufoj/PS3_Proxy_Server_v2.2.SGMR.apk/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link Proxy Server</a>
-                    <a href="https://www.mediafire.com/file/35hrya0jgocmzgl/PS3_Proxy_Server_MOD.SGMR.apk/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link proxy Mod Kizeo</a>
-                    <a href="https://www.mediafire.com/file/krgzpj6jszy4uai/ps3-updatelist.txt/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link Software Txt</a>
+                    <a href="https://www.mediafire.com/file/813iyv4nqcuufoj/PS3_Proxy_Server_v2.2.SGMR.apk/file" target="_blank" class="final-link">➤ Link Proxy Server</a>
+                    <a href="https://www.mediafire.com/file/35hrya0jgocmzgl/PS3_Proxy_Server_MOD.SGMR.apk/file" target="_blank" class="final-link">➤ Link proxy Mod Kizeo</a>
+                    <a href="https://www.mediafire.com/file/krgzpj6jszy4uai/ps3-updatelist.txt/file" target="_blank" class="final-link">➤ Link Software Txt</a>
                 </div>
                 <div class="sub-btn" onclick="toggleSub('s12')"> LICENCIAS PS3</div>
                 <div id="s12" class="links-container">
-                    <a href="https://www.mediafire.com/file/oj5akmc7iiake7q/17.280_Licencias.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link 17280 Licencias</a>
-                    <a href="https://www.mediafire.com/file/u5gmxrzy8qx9405/Licencia_PS2_Universal.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Link Licencias UV ps2</a>
+                    <a href="https://www.mediafire.com/file/oj5akmc7iiake7q/17.280_Licencias.SGMR.pkg/file" target="_blank" class="final-link">➤ Link 17280 Licencias</a>
+                    <a href="https://www.mediafire.com/file/u5gmxrzy8qx9405/Licencia_PS2_Universal.SGMR.pkg/file" target="_blank" class="final-link">➤ Link Licencias UV ps2</a>
                 </div>
                 <div class="sub-btn" onclick="toggleSub('s13')"> UTILIDADES PS3</div>
                 <div id="s13" class="links-container">
-                    <a href="https://www.mediafire.com/file/7ba234ni1qba5rb/Debug_Browser.SGMR.pkg/file" target="_blank" rel="noopener noreferrer" class="final-link">➤ Solucion Mediafire</a>
+                    <a href="https://www.mediafire.com/file/7ba234ni1qba5rb/Debug_Browser.SGMR.pkg/file" target="_blank" class="final-link">➤ Solucion Mediafire</a>
                 </div>
             </div>
         </div>
@@ -367,12 +341,13 @@
 </div>
 
 <script>
+    // Reloj optimizado para bajo consumo de CPU
     function updateClock() {
-        const now = new Date();
-        const time = now.getHours().toString().padStart(2, '0') + ":" + 
-                     now.getMinutes().toString().padStart(2, '0') + ":" + 
-                     now.getSeconds().toString().padStart(2, '0');
-        document.getElementById('clock').textContent = time;
+        var now = new Date();
+        var time = now.getHours().toString().replace(/^(\d)$/, "0$1") + ":" + 
+                   now.getMinutes().toString().replace(/^(\d)$/, "0$1") + ":" + 
+                   now.getSeconds().toString().replace(/^(\d)$/, "0$1");
+        document.getElementById('clock').innerHTML = time;
     }
     setInterval(updateClock, 1000);
     updateClock();
