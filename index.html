@@ -84,27 +84,31 @@
         .hub-container { width: 100%; max-width: 1100px; margin: 0 auto; text-align: center; }
         .menu-block { display: inline-block; width: 240px; margin: 10px; vertical-align: top; }
         
-        /* ITEM DE MENÚ CON ANIMACIÓN DE ACERCAMIENTO */
+        /* ITEM DE MENÚ BASE (ESTADO APAGADO) */
         .menu-item { 
-            background-color: #1a1a1a; 
+            background-color: #1a1a1a !important; /* Forzamos color oscuro base */
             color: #ffffff; 
             padding: 18px 10px; 
             font-size: 20px; font-weight: bold; 
             border: 2px solid #9d00ff; 
             border-radius: 12px; cursor: pointer; display: block; text-decoration: none; 
-            transition: all 0.2s ease-out; /* Animación suave */
+            transition: transform 0.2s ease-out, background 0.2s, border 0.2s, box-shadow 0.2s;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
-            transform: scale(1); /* Estado inicial para la GPU */
+            transform: scale(1);
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: none;
         }
 
-        /* ANIMACIÓN DE ACERCAMIENTO OPTIMIZADA */
-        .menu-item:hover { 
-            background-color: #9d00ff; 
+        /* ANIMACIÓN DE ACERCAMIENTO (SOLO CUANDO SE ACTIVA) */
+        .menu-item:hover, .menu-item:focus, .menu-item.ps3-focus { 
+            background-color: #9d00ff !important; 
             border-color: #ffffff; 
             box-shadow: 0 0 20px rgba(157, 0, 255, 0.8);
-            transform: scale(1.05); /* Acercamiento suave */
+            transform: scale(1.05);
             z-index: 10;
         }
 
@@ -119,9 +123,18 @@
             background: #111;
             text-decoration: none; padding: 12px 15px; font-size: 15px; 
             font-weight: bold; border-bottom: 1px solid #333; cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.2s;
+            outline: none;
+            width: 100%;
+            border-left: none; border-right: none; border-top: none;
+            text-align: left;
         }
-        .sub-btn:hover { color: #ff3333; background: #222; padding-left: 20px; }
+        .sub-btn:hover, .sub-btn:focus, .sub-btn.ps3-focus { 
+            color: #ff3333; 
+            background: #222; 
+            padding-left: 20px;
+            box-shadow: inset 4px 0 0 #ff3333;
+        }
 
         .links-container {
             display: none; background: #050505; border-left: 3px solid #ff0000;
@@ -133,9 +146,14 @@
             text-decoration: none;
             padding: 12px 25px; font-size: 13px; font-weight: bold;
             border-bottom: 1px solid #1a1a1a;
-            transition: color 0.2s;
+            transition: all 0.2s;
+            outline: none;
         }
-        .final-link:hover { color: #ffffff; background: #111; }
+        .final-link:hover, .final-link:focus, .final-link.ps3-focus { 
+            color: #ffffff; 
+            background: #111; 
+            padding-left: 35px;
+        }
         
         .pending-link { color: #555 !important; cursor: default; }
 
@@ -156,11 +174,12 @@
             box-shadow: 0 5px 15px rgba(157, 0, 255, 0.4);
             text-transform: uppercase;
             transform: scale(1);
+            outline: none;
         }
-        .paypal-btn:hover { 
+        .paypal-btn:hover, .paypal-btn:focus, .paypal-btn.ps3-focus { 
             background: linear-gradient(45deg, #ff0000, #9d00ff);
             box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
-            transform: scale(1.05); /* Acercamiento en apoyo */
+            transform: scale(1.05);
         }
         .btn-glow {
             font-size: 11px;
@@ -200,8 +219,9 @@
             font-weight: bold;
             border: 2px solid #9d00ff; 
             transition: transform 0.2s;
+            outline: none;
         }
-        .social-link:hover {
+        .social-link:hover, .social-link:focus, .social-link.ps3-focus {
             background-color: #9d00ff;
             box-shadow: 0 0 10px rgba(157, 0, 255, 0.7);
             transform: translateY(-3px);
@@ -243,90 +263,90 @@
     <div class="hub-container">
         <!-- MENÚ DE JUEGOS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMain('m1')"> JUEGOS</div>
+            <button class="menu-item nav-item" onclick="toggleMain('m1')"> JUEGOS</button>
             <div id="m1" class="submenu">
-                <div class="sub-btn" onclick="toggleSub('s1')"> INSTALAR PKG</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s1')"> INSTALAR PKG</button>
                 <div id="s1" class="links-container">
-                    <a href="#" class="final-link pending-link">➤ PRÓXIMAMENTE...</a>
+                    <a href="#" class="final-link nav-item pending-link">➤ PRÓXIMAMENTE...</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s2')"> JG_PS2 PKG</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s2')"> JG_PS2 PKG</button>
                 <div id="s2" class="links-container">
-                    <a href="#" class="final-link pending-link">➤ PRÓXIMAMENTE...</a>
+                    <a href="#" class="final-link nav-item pending-link">➤ PRÓXIMAMENTE...</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s3')"> EMULADORES PKG</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s3')"> EMULADORES PKG</button>
                 <div id="s3" class="links-container">
-                    <a href="https://www.mediafire.com/file/0m0k0cqg65btpdd/RetroArch.SGMR.pkg/file" target="_blank" class="final-link">➤ Link RetroArch</a>
+                    <a href="https://www.mediafire.com/file/0m0k0cqg65btpdd/RetroArch.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link RetroArch</a>
                 </div>
             </div>
         </div>
 
         <!-- MENÚ DE APPS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMain('m2')"> APPS</div>
+            <button class="menu-item nav-item" onclick="toggleMain('m2')"> APPS</button>
             <div id="m2" class="submenu">
-                <div class="sub-btn" onclick="toggleSub('s4')"> APOLLO</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s4')"> APOLLO</button>
                 <div id="s4" class="links-container">
-                    <a href="https://www.mediafire.com/file/pgydpa60xvn14dn/Apollo-ps3.SGMR.pkg/file" target="_blank" class="final-link">➤ Link Apollo</a>
+                    <a href="https://www.mediafire.com/file/pgydpa60xvn14dn/Apollo-ps3.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link Apollo</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s5')"> MULTIMAN</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s5')"> MULTIMAN</button>
                 <div id="s5" class="links-container">
-                    <a href="https://www.mediafire.com/file/aqpf3sj5ry6k46d/Multiman.SGMR.pkg/file" target="_blank" class="final-link">➤ Link Multiman</a>
+                    <a href="https://www.mediafire.com/file/aqpf3sj5ry6k46d/Multiman.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link Multiman</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s6')"> WEBMAN MOD</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s6')"> WEBMAN MOD</button>
                 <div id="s6" class="links-container">
-                    <a href="https://www.mediafire.com/file/s59exu8g71r93yi/webMAN_MOD_1.47.48_SGMR.pkg/file" target="_blank" class="final-link">➤ Link WebMan Mod</a>
+                    <a href="https://www.mediafire.com/file/s59exu8g71r93yi/webMAN_MOD_1.47.48_SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link WebMan Mod</a>
                 </div>
             </div>
         </div>
 
         <!-- MENÚ DE TIENDAS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMain('m3')"> TIENDAS</div>
+            <button class="menu-item nav-item" onclick="toggleMain('m3')"> TIENDAS</button>
             <div id="m3" class="submenu">
-                <div class="sub-btn" onclick="toggleSub('s7')"> VIDEOSTORE SCZ</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s7')"> VIDEOSTORE SCZ</button>
                 <div id="s7" class="links-container">
-                  <a href="https://www.mediafire.com/file/scrcgunrqvprsuq/VideoStore.4.0.SGMR.pkg/file" target="_blank" class="final-link">➤ Link VideoStore</a>
+                  <a href="https://www.mediafire.com/file/scrcgunrqvprsuq/VideoStore.4.0.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link VideoStore</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s8')"> ZUKOSTORE</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s8')"> ZUKOSTORE</button>
                 <div id="s8" class="links-container">
-                  <a href="https://www.mediafire.com/file/1d0jnxndp1wo2y4/ZukoStore.SGMR.pkg/file" target="_blank" class="final-link">➤ Link ZukoStore</a>
+                  <a href="https://www.mediafire.com/file/1d0jnxndp1wo2y4/ZukoStore.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link ZukoStore</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s9')"> PKGI</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s9')"> PKGI</button>
                 <div id="s9" class="links-container">
-                  <a href="https://www.mediafire.com/file/g082kr997f2ciad/PKGI.SGMR.pkg/file" target="_blank" class="final-link">➤ Link PKGI-1</a>
+                  <a href="https://www.mediafire.com/file/g082kr997f2ciad/PKGI.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link PKGI-1</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s10')"> MULTI FIX</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s10')"> MULTI FIX</button>
                 <div id="s10" class="links-container">
-                  <a href="https://www.mediafire.com/file/zqkxf0mclj00k8v/MULTI_FIX_HEN_4.92.SGMR.pkg/file" target="_blank" class="final-link">➤ Link MultiFix</a>
+                  <a href="https://www.mediafire.com/file/zqkxf0mclj00k8v/MULTI_FIX_HEN_4.92.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link MultiFix</a>
                 </div>
             </div>
         </div>
 
         <!-- EXTRAS -->
         <div class="menu-block">
-            <div class="menu-item" onclick="toggleMain('m4')"> EXTRAS</div>
+            <button class="menu-item nav-item" onclick="toggleMain('m4')"> EXTRAS</button>
             <div id="m4" class="submenu">
-                <div class="sub-btn" onclick="toggleSub('s11')"> APP MOVIL</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s11')"> APP MOVIL</button>
                 <div id="s11" class="links-container">
-                    <a href="https://www.mediafire.com/file/813iyv4nqcuufoj/PS3_Proxy_Server_v2.2.SGMR.apk/file" target="_blank" class="final-link">➤ Link Proxy Server</a>
-                    <a href="https://www.mediafire.com/file/35hrya0jgocmzgl/PS3_Proxy_Server_MOD.SGMR.apk/file" target="_blank" class="final-link">➤ Link proxy Mod Kizeo</a>
-                    <a href="https://www.mediafire.com/file/krgzpj6jszy4uai/ps3-updatelist.txt/file" target="_blank" class="final-link">➤ Link Software Txt</a>
+                    <a href="https://www.mediafire.com/file/813iyv4nqcuufoj/PS3_Proxy_Server_v2.2.SGMR.apk/file" target="_blank" class="final-link nav-item">➤ Link Proxy Server</a>
+                    <a href="https://www.mediafire.com/file/35hrya0jgocmzgl/PS3_Proxy_Server_MOD.SGMR.apk/file" target="_blank" class="final-link nav-item">➤ Link proxy Mod Kizeo</a>
+                    <a href="https://www.mediafire.com/file/krgzpj6jszy4uai/ps3-updatelist.txt/file" target="_blank" class="final-link nav-item">➤ Link Software Txt</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s12')"> LICENCIAS PS3</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s12')"> LICENCIAS PS3</button>
                 <div id="s12" class="links-container">
-                    <a href="https://www.mediafire.com/file/oj5akmc7iiake7q/17.280_Licencias.SGMR.pkg/file" target="_blank" class="final-link">➤ Link 17280 Licencias</a>
-                    <a href="https://www.mediafire.com/file/u5gmxrzy8qx9405/Licencia_PS2_Universal.SGMR.pkg/file" target="_blank" class="final-link">➤ Link Licencias UV ps2</a>
+                    <a href="https://www.mediafire.com/file/oj5akmc7iiake7q/17.280_Licencias.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link 17280 Licencias</a>
+                    <a href="https://www.mediafire.com/file/u5gmxrzy8qx9405/Licencia_PS2_Universal.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Link Licencias UV ps2</a>
                 </div>
-                <div class="sub-btn" onclick="toggleSub('s13')"> UTILIDADES PS3</div>
+                <button class="sub-btn nav-item" onclick="toggleSub('s13')"> UTILIDADES PS3</button>
                 <div id="s13" class="links-container">
-                    <a href="https://www.mediafire.com/file/7ba234ni1qba5rb/Debug_Browser.SGMR.pkg/file" target="_blank" class="final-link">➤ Solucion Mediafire</a>
+                    <a href="https://www.mediafire.com/file/7ba234ni1qba5rb/Debug_Browser.SGMR.pkg/file" target="_blank" class="final-link nav-item">➤ Solucion Mediafire</a>
                 </div>
             </div>
         </div>
 
         <!-- APOYO -->
         <div class="paypal-block">
-            <a href="https://buymeacoffee.com/supersgmr" target="_blank" class="paypal-btn">
+            <a href="https://buymeacoffee.com/supersgmr" target="_blank" class="paypal-btn nav-item">
                 🚀 APOYA EL CANAL
                 <span class="btn-glow">Deja tu gracias y disfruta</span>
             </a>
@@ -336,11 +356,11 @@
     <div class="social-section">
         <div class="social-title">SÍGUEME COMO @SUPERSGMR</div>
         <div class="social-grid">
-            <a href="https://www.youtube.com/@SuperSGMR" target="_blank" class="social-link"> YOUTUBE</a>
-            <a href="https://tiktok.com/@super.s.gmr" target="_blank" class="social-link"> TIKTOK</a>
-            <a href="https://discord.gg/Bt5cCYn5" target="_blank" class="social-link"> DISCORD</a>
-            <a href="https://www.twitch.tv/supersgmr" target="_blank" class="social-link"> TWITCH</a>
-            <a href="https://facebook.com/sergio00solanomuwvj" target="_blank" class="social-link"> FACEBOOK</a>
+            <a href="https://www.youtube.com/@SuperSGMR" target="_blank" class="social-link nav-item"> YOUTUBE</a>
+            <a href="https://tiktok.com/@super.s.gmr" target="_blank" class="social-link nav-item"> TIKTOK</a>
+            <a href="https://discord.gg/Bt5cCYn5" target="_blank" class="social-link nav-item"> DISCORD</a>
+            <a href="https://www.twitch.tv/supersgmr" target="_blank" class="social-link nav-item"> TWITCH</a>
+            <a href="https://facebook.com/sergio00solanomuwvj" target="_blank" class="social-link nav-item"> FACEBOOK</a>
         </div>
     </div>
 
@@ -348,16 +368,19 @@
 </div>
 
 <script>
+    /* RELOJ DINÁMICO */
     function updateClock() {
         var now = new Date();
         var time = now.getHours().toString().replace(/^(\d)$/, "0$1") + ":" + 
                    now.getMinutes().toString().replace(/^(\d)$/, "0$1") + ":" + 
                    now.getSeconds().toString().replace(/^(\d)$/, "0$1");
-        if(document.getElementById('clock')) document.getElementById('clock').innerHTML = time;
+        var clockEl = document.getElementById('clock');
+        if(clockEl) clockEl.innerHTML = time;
     }
     setInterval(updateClock, 1000);
     updateClock();
 
+    /* FUNCIONES DE MENÚ ORIGINALES */
     function toggleMain(id) {
         var menu = document.getElementById(id);
         var submenus = document.getElementsByClassName("submenu");
@@ -375,6 +398,64 @@
         }
         sub.style.display = (sub.style.display === "block") ? "none" : "block";
     }
+
+    /* NAVEGACIÓN COMPATIBLE CON PS3 (D-PAD / FLECHAS) */
+    var navIndex = -1; // Cambiado a -1 para que nada empiece iluminado forzosamente
+
+    function getVisibleNav() {
+        var all = document.querySelectorAll('.nav-item');
+        var visible = [];
+        for (var i = 0; i < all.length; i++) {
+            var el = all[i];
+            if (el.offsetWidth > 0 && el.offsetHeight > 0) {
+                visible.push(el);
+            }
+        }
+        return visible;
+    }
+
+    function refreshSelection() {
+        var items = getVisibleNav();
+        if (items.length === 0) return;
+        
+        if (navIndex >= items.length) navIndex = items.length - 1;
+        if (navIndex < 0 && navIndex !== -1) navIndex = 0;
+
+        for (var i = 0; i < items.length; i++) {
+            items[i].classList.remove('ps3-focus');
+        }
+        
+        if (navIndex !== -1) {
+            items[navIndex].classList.add('ps3-focus');
+            items[navIndex].focus();
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        var items = getVisibleNav();
+        if (items.length === 0) return;
+
+        if (navIndex === -1) navIndex = 0; // Al presionar una tecla, empezamos en el primero
+
+        if (e.keyCode === 40 || e.keyCode === 39) { // Abajo o Derecha
+            navIndex = (navIndex + 1) % items.length;
+            refreshSelection();
+            e.preventDefault();
+        }
+        else if (e.keyCode === 38 || e.keyCode === 37) { // Arriba o Izquierda
+            navIndex = (navIndex - 1 + items.length) % items.length;
+            refreshSelection();
+            e.preventDefault();
+        }
+        else if (e.keyCode === 13) { // Enter
+            items[navIndex].click();
+            setTimeout(refreshSelection, 150);
+        }
+    });
+
+    window.onload = function() {
+        refreshSelection();
+    };
 </script>
 
 </body>
